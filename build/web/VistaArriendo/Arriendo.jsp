@@ -168,6 +168,106 @@
                     </div>
                 </div>     
             </div>
+            
+            <!-- ficha arriendo -->
+            <div class="row d-flex justify-content-center m-4 ">
+                <div class="col-6 d-flex align-items-center ficha-departamento">   
+                    <div class="col-3 p-1   ">
+                        <a href="#">
+                                <img src="../Css/img/departamento1.jpg" class=" imagen-departamento w-100" alt=""/>
+                        </a>
+                    </div>
+                    <div class="col-9 ms-2 p-1 d-block ">
+                        <div class="col-12 mb-3">
+                            <p>Departamento en Coquimbo</p>
+                            <h3>Departamento en arriendo 3 habitaciones</h3>
+                            <span>Vista al mar</span>
+                        </div> 
+                        <div class=" col-12 d-flex align-items-center justify-content-end">
+                            <div class="col-6 d-flex">
+                                <ul class="list-inline lista-departamento">
+                                    <li>3 Dormitorios</li>
+                                    <li>2 Baños</li>
+                                </ul>
+                            </div>
+                            <div class="col-6 d-flex align-items-center justify-content-end">
+                                <a href="#" class=" btn-departamento btn  px-3 py-2 ">
+                                    <span class="texto-precio">180.000</span>
+                                </a>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>     
+            </div>
+
+            <!-- ficha arriendo -->
+            <div class="row d-flex justify-content-center m-4 ">
+                <div class="col-6 d-flex align-items-center ficha-departamento">   
+                    <div class="col-3 p-1   ">
+                        <a href="#">
+                                <img src="../Css/img/Departamento2.jpg" class=" imagen-departamento w-100" alt=""/>
+                        </a>
+                    </div>
+                    <div class="col-9 ms-2 p-1 d-block ">
+                        <div class="col-12 mb-3">
+                            <p>Departamento en Pucon</p>
+                            <h3>Departamento en arriendo 2 habitaciones</h3>
+                            <span>Restaurantes cerca</span>
+                        </div> 
+                        <div class=" col-12 d-flex align-items-center justify-content-end">
+                            <div class="col-6 d-flex">
+                                <ul class="list-inline lista-departamento">
+                                    <li>2 Dormitorios</li>
+                                    <li>1 Baños</li>
+                                </ul>
+                            </div>
+                            <div class="col-6 d-flex align-items-center justify-content-end">
+                                <a href="#" class=" btn-departamento btn  px-3 py-2 ">
+                                    <span class="texto-precio">150.000</span>
+                                </a>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>     
+            </div>
+
+            <!-- ficha arriendo -->
+            <div class="row d-flex justify-content-center m-4 ">
+                <div class="col-6 d-flex align-items-center ficha-departamento">   
+                    <div class="col-3 p-1   ">
+                        <a href="#">
+                                <img src="../Css/img/departamento3.jpg" class=" imagen-departamento w-100" alt=""/>
+                        </a>
+                    </div>
+                    <div class="col-9 ms-2 p-1 d-block ">
+                        <div class="col-12 mb-3">
+                            <p>Departamento en Viña del mar</p>
+                            <h3>Departamento en arriendo 1 habitaciones</h3>
+                            <span>Vista al mar</span>
+                        </div> 
+                        <div class=" col-12 d-flex align-items-center justify-content-end">
+                            <div class="col-6 d-flex">
+                                <ul class="list-inline lista-departamento">
+                                    <li>1 Dormitorios</li>
+                                    <li>1 Baños</li>
+                                </ul>
+                            </div>
+                            <div class="col-6 d-flex align-items-center justify-content-end">
+                                <a href="#" class=" btn-departamento btn  px-3 py-2 ">
+                                    <span class="texto-precio">120.000</span>
+                                </a>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>     
+            </div>
+            
 
             
         </section>
