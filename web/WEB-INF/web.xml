@@ -20,6 +20,10 @@
         <servlet-name>ControladorCerrarSesion</servlet-name>
         <servlet-class>Controlador.ControladorCerrarSesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorEstadistica</servlet-name>
+        <servlet-class>Controlador.ControladorEstadistica</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ControladorCerrarSesion</servlet-name>
         <url-pattern>/ControladorCerrarSesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorEstadistica</servlet-name>
+        <url-pattern>/ControladorEstadistica</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

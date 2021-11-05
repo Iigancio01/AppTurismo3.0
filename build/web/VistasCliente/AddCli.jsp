@@ -8,7 +8,7 @@
     <body>
         <div class="container">
             <div class="col-lg-6">
-            <h1>Agregar departamento</h1>
+            <h1>Agregar Cliente</h1>
             <form action="ControladorCliente">
                 Rut Cliente:<br>
                 <input class="form-control" type="text" name="txtRutCliente"><br>
@@ -22,7 +22,7 @@
                 <input class="form-control" type="text" name="txtApellidoPC"><br>
                 Apellido Materno:<br>
                 <input class="form-control" type="text" name="txtApellidoMC"><br>
-                <button  class="btn btn-primary" type="submit" name="accion" value="AgregarCliente" con>Agregar Cliente</button><br>
+                <button  class="btn btn-primary" type="submit" name="accion" value="AgregarCliente" >Agregar Cliente</button><br>
             </form>
             </div>
         </div>

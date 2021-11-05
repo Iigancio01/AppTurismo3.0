@@ -20,7 +20,7 @@
                 <input class="form-control" type="text" name="txtDireccion"><br>
                 Descripcion:<br>
                 <input class="form-control" type="text" name="txtDescripcion"><br>
-                <button  class="btn btn-primary" type="submit" name="accion" value="AgregarDep" con>Agregar Dpto</button><br>
+                <button  class="btn btn-primary" type="submit" name="accion" value="AgregarDep" >Agregar Dpto</button><br>
             </form>
             </div>
         </div>
