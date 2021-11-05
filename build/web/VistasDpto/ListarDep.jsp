@@ -29,6 +29,10 @@
                     <div  class="card-header">
                         <h5>Departamentos</h5>
                     </div>
+                      <div  class="card-block">
+                        <a class="btn btn-success" href="ControladorDpto?accion=addDep" target="ContenedorPrincipal">Agregar nuevo</a>
+                    </div>                 
+
                     <div  class="card-body">
                         <div  class="dt-responsive table-responsive">
                             <table id="dom-table" class="table table-striped table-bordered nowrap">
@@ -58,8 +62,8 @@
                                     <td class="text-center"><%= dpto.getDireccion()%></td>
                                     <td class="text-center"><%= dpto.getDescripcion()%></td>
                                     <td class="text-center">
-                                        <a class="btn btn-warning" href="Controlador?accion=editarDep&IdDepartamento=<%=dpto.getIdDepartamento()%>" target="ContenedorPrincipal">Editar</a>
-                                        <a class="btn btn-danger" href="Controlador?accion=eliminarDep&IdDepartamento=<%=dpto.getIdDepartamento()%>" onclick="return confirm('¿Seguro que quieres eliminar?')" >Eliminar</a>
+                                        <a class="btn btn-warning" href="ControladorDpto?accion=editarDep&IdDepartamento=<%=dpto.getIdDepartamento()%>" target="ContenedorPrincipal">Editar</a>
+                                        <a class="btn btn-danger" href="ControladorDpto?accion=eliminarDep&IdDepartamento=<%=dpto.getIdDepartamento()%>" onclick="return confirm('¿Seguro que quieres eliminar?')" >Eliminar</a>
                                     </td>
                                 </tr>
                                 <%}%>

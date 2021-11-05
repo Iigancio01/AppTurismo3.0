@@ -12,4 +12,5 @@ import Modelo.Usuario;
  */
 public interface ValidarLogin {
     public int validar(Usuario usu);
+    public int validarTipo(Usuario usu);
 }

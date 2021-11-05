@@ -9,7 +9,7 @@
         <div class="container">
             <div class="col-lg-6">
             <h1>Agregar departamento</h1>
-            <form action="Controlador">
+            <form action="ControladorDpto">
                 Id Departamento:<br>
                 <input class="form-control" type="text" name="txtIdDep"><br>
                 Tarifa:<br>

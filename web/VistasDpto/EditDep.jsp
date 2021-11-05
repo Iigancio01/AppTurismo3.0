@@ -18,7 +18,7 @@
                     Departamentos dpto=(Departamentos)dptoDAO.listarIdDpto(id);
              %>
             <h1>Modificar Departamento</h1>
-            <form action="Controlador">
+            <form action="ControladorDpto">
                 Id Departamento:<br>
                 <input class="form-control" style="background-color: #ccc "type="text" name="txtIdDep" value="<%= dpto.getIdDepartamento() %> " readonly><br>
                 Tarifa:<br>
