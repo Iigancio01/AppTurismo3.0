@@ -414,7 +414,6 @@ li:first-child {
   background: #3b5998;
 }
 
-
 /*  Ventana Arriendos  */
 #select-busqueda {
   width: 250px;
@@ -469,6 +468,7 @@ li:first-child {
 .lista-departamento li {
   padding-right: 15px;
 }
+
 
 /* MEDIAQUERIES */
 /* Dispositivo sm */
