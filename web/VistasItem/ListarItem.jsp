@@ -15,14 +15,14 @@
     <link href="Css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css"/>
     <!-- vendor css -->
     <link href="Css/datatable/style.css" rel="stylesheet" type="text/css"/>
-    
+  
     </head>
     <body>
         <br>
         <div style="height:100%; width:100%" class="col-sm-12" >
                 <div  class="card">
                     <div  class="card-header">
-                        <h5>Clientes</h5>
+                        <h5>Items</h5>
                     </div>
                       <div  class="card-block">
                         <a class="btn btn-success" href="ControladorItems?accion=addItem" target="ContenedorPrincipal">Agregar nuevo</a>
@@ -30,7 +30,7 @@
 
                     <div  class="card-body">
                         <div  class="dt-responsive table-responsive">
-                            <table id="dom-table" class="table table-striped table-bordered nowrap">
+                            <table id="dom-table" class="table table-striped table-bordered table-sm">
                                 <thead>
                                     <tr>
                                         <th class="text-center">Id Item</th>
@@ -48,7 +48,8 @@
                                     Items it=null;
                                     while(iter.hasNext()){
                                       it=iter.next();
-                                %>    
+                                %>
+                               
                                 <tbody>
                                     <tr>
                                         <td class="text-center"><%= it.getIdItem()%></td>
@@ -77,8 +78,8 @@
                 </div>
             </div>
         
-        
-        <!-- Required Js -->
+    
+    <!-- Required Js -->
     
     <script src="Css/datatable/js/vendor-all.min.js" type="text/javascript"></script>
     <script src="Css/datatable/js/bootstrap.min.js" type="text/javascript"></script>
@@ -91,6 +92,5 @@
     <script src="Css/datatable/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="Css/datatable/js/dataTables.bootstrap4.min.js" type="text/javascript"></script>
     <script src="Css/datatable/js/data-source-custom.js" type="text/javascript"></script>
-
     </body>
 </html>

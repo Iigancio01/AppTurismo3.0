@@ -7,6 +7,7 @@ package ModeloDAO;
 import Config.Conexion;
 import Interfaces.CrudDepartamento;
 import Modelo.Departamentos;
+import static java.lang.Integer.parseInt;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,7 +29,7 @@ public class DepartamentosDAO implements CrudDepartamento {
     @Override
     public List listarDpto() {
         List<Departamentos> datos=new ArrayList<>();
-        String sql="Select * from DEPARTAMENTO";
+        String sql="Select * from DEPARTAMENTO where ESTADODPTO=1";
         try{
             con=conex.getConnection();
             ps=con.prepareStatement(sql);
@@ -110,6 +111,80 @@ public class DepartamentosDAO implements CrudDepartamento {
             ps.executeUpdate();
         }catch(Exception e){
             System.out.println("No se ha podido eliminar el departamento"+ e.getMessage());
+        }
+        return false;
+    }
+
+    @Override
+    public List listarDptoDispo() {
+       List<Departamentos> datos=new ArrayList<>();
+        String sql="Select * from DEPARTAMENTO where ESTADODPTO=1";
+        try{
+            con=conex.getConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                Departamentos d= new Departamentos();
+                d.setIdDepartamento(rs.getString("IDDEPARTAMENTO"));
+                d.setIdTarifa(rs.getString("TARIFA_IDTARIFA"));
+                d.setIdComuna(rs.getString("COMUNA_IDCOMUNA"));
+                d.setDireccion(rs.getString("DIRECCION"));
+                d.setDescripcion(rs.getString("Descripcion"));
+                d.setEstadoDpto(parseInt(rs.getString("ESTADODPTO")));
+                datos.add(d);
+            }
+        }catch (Exception e){
+            System.out.println("No se ha podido listar el departamento"+ e.getMessage());
+        }
+        return datos;
+    }
+
+    @Override
+    public List listarDptoNoDispo() {
+        List<Departamentos> datos=new ArrayList<>();
+        String sql="Select * from DEPARTAMENTO where ESTADODPTO=0";
+        try{
+            con=conex.getConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                Departamentos d= new Departamentos();
+                d.setIdDepartamento(rs.getString("IDDEPARTAMENTO"));
+                d.setIdTarifa(rs.getString("TARIFA_IDTARIFA"));
+                d.setIdComuna(rs.getString("COMUNA_IDCOMUNA"));
+                d.setDireccion(rs.getString("DIRECCION"));
+                d.setDescripcion(rs.getString("Descripcion"));
+                d.setEstadoDpto(parseInt(rs.getString("ESTADODPTO")));
+                datos.add(d);
+            }
+        }catch (Exception e){
+            System.out.println("No se ha podido listar el departamento"+ e.getMessage());
+        }
+        return datos;
+    }
+
+    @Override
+    public boolean editDptoEstadoD(String IdDepartamento) {
+       try{
+            String sql="update DEPARTAMENTO set ESTADODPTO=1 where IDDEPARTAMENTO="+IdDepartamento;
+            con=conex.getConnection();
+            ps=con.prepareStatement(sql);
+            ps.executeUpdate();
+        }catch(Exception e){
+            System.out.println("No se ha podido editar los datos"+ e.getMessage());
+        }
+        return false;
+    }
+
+    @Override
+    public boolean editDptoEstadoND(String IdDepartamento) {
+       try{
+            String sql="update DEPARTAMENTO set ESTADODPTO=0 where IDDEPARTAMENTO="+IdDepartamento;
+            con=conex.getConnection();
+            ps=con.prepareStatement(sql);
+            ps.executeUpdate();
+        }catch(Exception e){
+            System.out.println("No se ha podido editar los datos"+ e.getMessage());
         }
         return false;
     }

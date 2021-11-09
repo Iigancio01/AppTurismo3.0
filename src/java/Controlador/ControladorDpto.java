@@ -46,8 +46,7 @@ public class ControladorDpto extends HttpServlet {
         
         //Crud Departamento
         if(action.equalsIgnoreCase("listarDep")){
-            acceso=listarDpto;
-            
+            acceso=listarDpto;  
         }else if(action.equalsIgnoreCase("addDep")){
             acceso=addDpto;
             
@@ -93,7 +92,6 @@ public class ControladorDpto extends HttpServlet {
             dpto.setIdDepartamento(IdDepartamento);
             dptoDAO.deleteDpto(IdDepartamento);
             acceso=listarDpto;
-           
         }
         
        

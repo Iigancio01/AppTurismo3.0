@@ -17,4 +17,8 @@ public interface CrudDepartamento {
     public boolean addDpto(Departamentos dpto);
     public boolean editDpto(Departamentos dpto);
     public boolean deleteDpto(String IdDepartamento);
+    public List listarDptoDispo();
+    public List listarDptoNoDispo();
+    public boolean editDptoEstadoD(String IdDepartamento);
+    public boolean editDptoEstadoND(String IdDepartamento);
 }

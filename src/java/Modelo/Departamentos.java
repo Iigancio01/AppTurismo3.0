@@ -4,26 +4,25 @@
  */
 package Modelo;
 
-/**
- *
- * @author avata
- */
+
 public class Departamentos {
     String IdDepartamento;
     String IdTarifa;
     String IdComuna;
     String Direccion;
     String Descripcion;
+    int EstadoDpto;
 
     public Departamentos() {
     }
 
-    public Departamentos(String IdDepartamento, String IdTarifa, String IdComuna, String Direccion, String Descripcion) {
+    public Departamentos(String IdDepartamento, String IdTarifa, String IdComuna, String Direccion, String Descripcion, int EstadoDpto) {
         this.IdDepartamento = IdDepartamento;
         this.IdTarifa = IdTarifa;
         this.IdComuna = IdComuna;
         this.Direccion = Direccion;
         this.Descripcion = Descripcion;
+        this.EstadoDpto = EstadoDpto;
     }
 
     public String getIdDepartamento() {
@@ -64,5 +63,13 @@ public class Departamentos {
 
     public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
+    }
+    
+    public int getEstadoDpto(){
+        return EstadoDpto;
+    }
+    
+    public void setEstadoDpto(int EstadoDpto){
+        this.EstadoDpto = EstadoDpto;
     }
 }
