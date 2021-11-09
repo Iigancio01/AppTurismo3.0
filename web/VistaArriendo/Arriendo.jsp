@@ -72,11 +72,10 @@
         <section>
             <!-- ficha arriendo -->
             <div class="row d-flex justify-content-center m-4 ">
-                <div class="col-6 d-flex align-items-center ficha-departamento">   
-                    <div class="col-3 p-1   ">
-                        <a href="#">
-                                <img src="../Css/img/departamento1.jpg" class=" imagen-departamento w-100" alt=""/>
-                        </a>
+                <div class="col-6 d-flex align-items-center ficha-departamento" id="ficha-departamento">  
+                    <a href="Departamento.jsp" id="link"></a>
+                    <div class="col-3 p-1">
+                        <img src="../Css/img/departamento1.jpg" class=" imagen-departamento w-100" alt=""/>
                     </div>
                     <div class="col-9 ms-2 p-1 d-block ">
                         <div class="col-12 mb-3">
@@ -93,7 +92,7 @@
                             </div>
                             <div class="col-6 d-flex align-items-center justify-content-end">
                                 <a href="#" class=" btn-departamento btn  px-3 py-2 ">
-                                    <span class="texto-precio">180.000</span>
+                                    <span class="texto-precio">$45.000/noche</span>
                                 </a>
 
                             </div>
@@ -105,7 +104,8 @@
 
             <!-- ficha arriendo -->
             <div class="row d-flex justify-content-center m-4 ">
-                <div class="col-6 d-flex align-items-center ficha-departamento">   
+                <div class="col-6 d-flex align-items-center ficha-departamento" id="ficha-departamento">   
+                    <a href="#" id="link"></a>  
                     <div class="col-3 p-1   ">
                         <a href="#">
                                 <img src="../Css/img/Departamento2.jpg" class=" imagen-departamento w-100" alt=""/>
@@ -126,7 +126,7 @@
                             </div>
                             <div class="col-6 d-flex align-items-center justify-content-end">
                                 <a href="#" class=" btn-departamento btn  px-3 py-2 ">
-                                    <span class="texto-precio">150.000</span>
+                                    <span class="texto-precio">$30.000/noche</span>
                                 </a>
 
                             </div>
@@ -138,7 +138,8 @@
 
             <!-- ficha arriendo -->
             <div class="row d-flex justify-content-center m-4 ">
-                <div class="col-6 d-flex align-items-center ficha-departamento">   
+                <div class="col-6 d-flex align-items-center ficha-departamento" id="ficha-departamento">   
+                    <a href="#" id="link"></a>   
                     <div class="col-3 p-1   ">
                         <a href="#">
                                 <img src="../Css/img/departamento3.jpg" class=" imagen-departamento w-100" alt=""/>
@@ -159,7 +160,7 @@
                             </div>
                             <div class="col-6 d-flex align-items-center justify-content-end">
                                 <a href="#" class=" btn-departamento btn  px-3 py-2 ">
-                                    <span class="texto-precio">120.000</span>
+                                    <span class="texto-precio">$20.000/noche</span>
                                 </a>
 
                             </div>
@@ -168,14 +169,12 @@
                     </div>
                 </div>     
             </div>
-            
             <!-- ficha arriendo -->
             <div class="row d-flex justify-content-center m-4 ">
-                <div class="col-6 d-flex align-items-center ficha-departamento">   
-                    <div class="col-3 p-1   ">
-                        <a href="#">
-                                <img src="../Css/img/departamento1.jpg" class=" imagen-departamento w-100" alt=""/>
-                        </a>
+                <div class="col-6 d-flex align-items-center ficha-departamento" id="ficha-departamento">  
+                    <a href="Departamento.jsp" id="link"></a>
+                    <div class="col-3 p-1">
+                        <img src="../Css/img/departamento1.jpg" class=" imagen-departamento w-100" alt=""/>
                     </div>
                     <div class="col-9 ms-2 p-1 d-block ">
                         <div class="col-12 mb-3">
@@ -192,7 +191,7 @@
                             </div>
                             <div class="col-6 d-flex align-items-center justify-content-end">
                                 <a href="#" class=" btn-departamento btn  px-3 py-2 ">
-                                    <span class="texto-precio">180.000</span>
+                                    <span class="texto-precio">$45.000/noche</span>
                                 </a>
 
                             </div>
@@ -204,7 +203,8 @@
 
             <!-- ficha arriendo -->
             <div class="row d-flex justify-content-center m-4 ">
-                <div class="col-6 d-flex align-items-center ficha-departamento">   
+                <div class="col-6 d-flex align-items-center ficha-departamento" id="ficha-departamento">   
+                    <a href="#" id="link"></a>  
                     <div class="col-3 p-1   ">
                         <a href="#">
                                 <img src="../Css/img/Departamento2.jpg" class=" imagen-departamento w-100" alt=""/>
@@ -225,7 +225,7 @@
                             </div>
                             <div class="col-6 d-flex align-items-center justify-content-end">
                                 <a href="#" class=" btn-departamento btn  px-3 py-2 ">
-                                    <span class="texto-precio">150.000</span>
+                                    <span class="texto-precio">$30.000/noche</span>
                                 </a>
 
                             </div>
@@ -237,7 +237,8 @@
 
             <!-- ficha arriendo -->
             <div class="row d-flex justify-content-center m-4 ">
-                <div class="col-6 d-flex align-items-center ficha-departamento">   
+                <div class="col-6 d-flex align-items-center ficha-departamento" id="ficha-departamento">   
+                    <a href="#" id="link"></a>   
                     <div class="col-3 p-1   ">
                         <a href="#">
                                 <img src="../Css/img/departamento3.jpg" class=" imagen-departamento w-100" alt=""/>
@@ -258,7 +259,7 @@
                             </div>
                             <div class="col-6 d-flex align-items-center justify-content-end">
                                 <a href="#" class=" btn-departamento btn  px-3 py-2 ">
-                                    <span class="texto-precio">120.000</span>
+                                    <span class="texto-precio">$20.000/noche</span>
                                 </a>
 
                             </div>
@@ -268,6 +269,8 @@
                 </div>     
             </div>
             
+            
+           
 
             
         </section>
