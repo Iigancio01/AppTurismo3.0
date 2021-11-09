@@ -19,7 +19,7 @@
             <h1>Modificar Item</h1>
             <form action="ControladorItems">
                 Id Item:<br>
-                <input class="form-control" style="background-color: #ccc "type="text" name="txtIdItem" value="<%= it.getIdItem() %> " readonly><br>
+                <input class="form-control" style="background-color: #ccc "type="text" name="txtIdItem" value="<%= it.getIdItem() %>" readonly><br>
                 Id Familia Item:<br>
                 <input class="form-control" type="text" name="txtIdFamiliaItem" value="<%= it.getIdFamiliaItem() %>"><br>
                 Descripcion:<br>

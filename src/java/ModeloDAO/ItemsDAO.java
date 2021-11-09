@@ -8,11 +8,15 @@ import Config.Conexion;
 import Interfaces.CrudItems;
 import Modelo.Items;
 import static java.lang.Integer.parseInt;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.NamedStoredProcedureQuery;
+import oracle.jdbc.OracleCallableStatement;
+import oracle.jdbc.OracleTypes;
 
 /**
  *
@@ -29,20 +33,24 @@ public class ItemsDAO implements CrudItems {
             
     @Override
     public List listarItems() {
-        List<Items> datos=new ArrayList<>();
-        String sql="Select * from ITEM";
+        List<Items> datos=new ArrayList<>();    
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
-            while(rs.next()){
-                Items it= new Items();
-                it.setIdItem(rs.getString("IDITEM"));
-                it.setIdFamiliaItem(rs.getString("SUB_FAMILIA_ITEM_IDSUB_FAMILIA_ITEM"));
-                it.setDescripcion(rs.getString("DESCRIPCION"));
-                it.setValorItem(parseInt(rs.getString("VALOR")));
-                
-                datos.add(it);
+                CallableStatement sp_listar_item = con.prepareCall("{call sp_listar_item(?)}");
+                    sp_listar_item.registerOutParameter(1, OracleTypes.CURSOR);
+                    sp_listar_item.execute( );
+                    ResultSet rs = ((OracleCallableStatement)sp_listar_item).getCursor(1);
+
+
+
+                    while(rs.next()){
+                        Items it= new Items();
+                        it.setIdItem(rs.getString("IDITEM"));
+                        it.setIdFamiliaItem(rs.getString("SUB_FAMILIA_ITEM_IDSUB_FAMILIA_ITEM"));
+                        it.setDescripcion(rs.getString("DESCRIPCION"));
+                        it.setValorItem(parseInt(rs.getString("VALOR")));
+
+                        datos.add(it);
             }
         }catch (Exception e){
             System.out.println("No se han podido listar los items "+e.getMessage());
@@ -52,19 +60,21 @@ public class ItemsDAO implements CrudItems {
 
     @Override
     public Items listarIdItems(String IdItem) {
-        String sql="Select * from ITEM where IDITEM="+IdItem;
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
-            while(rs.next()){
-                
-                itm.setIdItem(rs.getString("IDITEM"));
-                itm.setIdFamiliaItem(rs.getString("SUB_FAMILIA_ITEM_IDSUB_FAMILIA_ITEM"));
-                itm.setDescripcion(rs.getString("DESCRIPCION"));
-                itm.setValorItem(parseInt(rs.getString("VALOR")));
-               
-                
+                CallableStatement sp_listar_itemid = con.prepareCall("{call sp_listar_itemid(?,?)}");
+                    sp_listar_itemid.setString(1,IdItem);
+                    sp_listar_itemid.registerOutParameter(2, OracleTypes.CURSOR);
+                    sp_listar_itemid.execute();
+                    ResultSet rs = ((OracleCallableStatement)sp_listar_itemid).getCursor(2);
+                    while(rs.next()){
+
+                        itm.setIdItem(rs.getString("IDITEM"));
+                        itm.setIdFamiliaItem(rs.getString("SUB_FAMILIA_ITEM_IDSUB_FAMILIA_ITEM"));
+                        itm.setDescripcion(rs.getString("DESCRIPCION"));
+                        itm.setValorItem(parseInt(rs.getString("VALOR")));
+
+
             }
         }catch (Exception e){
             System.out.println("No se a podido listar"+ e.getMessage());
@@ -74,12 +84,16 @@ public class ItemsDAO implements CrudItems {
 
     @Override
     public boolean addItems(Items it) {
-        String sql="insert into ITEM(IDITEM, SUB_FAMILIA_ITEM_IDSUB_FAMILIA_ITEM, DESCRIPCION, VALOR) "
-                +  "values('"+it.getIdItem()+"','"+it.getIdFamiliaItem()+"','"+it.getDescripcion()+"','"+it.getValorItem()+"')";
-        try{
+        
+          try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+              CallableStatement sp_insertar_item = con.prepareCall("{call sp_insertar_item(?,?,?,?)}");
+                sp_insertar_item.setString(1,it.getIdItem());
+                sp_insertar_item.setString(2,it.getIdFamiliaItem());
+                sp_insertar_item.setString(3,it.getDescripcion());
+                sp_insertar_item.setInt(4,it.getValorItem());
+                sp_insertar_item.execute();
+ 
         }catch(Exception e){
             System.out.println("No se ha podido insertar los datos"+ e.getMessage());
         }
@@ -89,11 +103,13 @@ public class ItemsDAO implements CrudItems {
     @Override
     public boolean editItems(Items it) {
         try{
-            String sql="update ITEM set IDITEM='"+it.getIdItem()+"', SUB_FAMILIA_ITEM_IDSUB_FAMILIA_ITEM='"+it.getIdFamiliaItem()+"', "
-                + "DESCRIPCION='"+it.getDescripcion()+"', VALOR='"+it.getValorItem()+"'where IDITEM="+it.getIdItem();
-            con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+           con=conex.getConnection();
+              CallableStatement sp_actualizar_item = con.prepareCall("{call sp_actualizar_item(?,?,?,?)}");
+                sp_actualizar_item.setString(1,it.getIdItem());
+                sp_actualizar_item.setString(2,it.getIdFamiliaItem());
+                sp_actualizar_item.setString(3,it.getDescripcion());
+                sp_actualizar_item.setInt(4,it.getValorItem());
+                sp_actualizar_item.execute();
         }catch(Exception e){
             System.out.println("No se ha podido editar los datos"+ e.getMessage());
         }
@@ -102,12 +118,13 @@ public class ItemsDAO implements CrudItems {
 
     @Override
     public boolean deleteItems(String IdItem) {
-        String sql="delete from ITEM where IDITEM="+IdItem;
-        
-        try{
-            con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+          try{
+             con=conex.getConnection();
+                CallableStatement sp_eliminar_item = con.prepareCall("{call sp_eliminar_item(?)}");
+                    sp_eliminar_item.setString(1,IdItem);
+
+                    sp_eliminar_item.execute();
+
         }catch(Exception e){
             System.out.println("No se ha podido eliminar el departamento"+ e.getMessage());
         }
