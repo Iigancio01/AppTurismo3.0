@@ -9,10 +9,13 @@ import Modelo.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 import Config.Conexion;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import oracle.jdbc.OracleCallableStatement;
+import oracle.jdbc.OracleTypes;
 
 
 public class ClienteDAO implements CrudCliente{
@@ -29,57 +32,66 @@ public class ClienteDAO implements CrudCliente{
        List<Cliente> datos=new ArrayList<>();
         String sql="Select * from CLIENTE";
         try{
-            con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
-            while(rs.next()){
-                Cliente cli= new Cliente();
-                cli.setRutCliente(rs.getString("RUTCLIENTE"));
-                cli.setIdUsuario(rs.getString("USUARIO_IDUSUARIO"));
-                cli.setIdComuna(rs.getString("COMUNA_IDCOMUNA"));
-                cli.setNombreCli(rs.getString("NOMBRE"));
-                cli.setAppellidoPC(rs.getString("APELLIDOP"));
-                cli.setApellidoMC(rs.getString("APELLIDOM"));
-                datos.add(cli);
-            }
-        }catch (Exception e){
-            System.out.println("Los datos no se han podido listar "+e.getMessage());
-        }
-        return datos;
-    }
+               con=conex.getConnection();
+                CallableStatement sp_listar_cliente = con.prepareCall("{call sp_listar_cliente(?)}");  
+                    sp_listar_cliente.registerOutParameter(1, OracleTypes.CURSOR);
+                    sp_listar_cliente.execute();
+                    ResultSet rs = ((OracleCallableStatement)sp_listar_cliente).getCursor(1);
+                        while(rs.next()){
+                            Cliente cli= new Cliente();
+                            cli.setRutCliente(rs.getString("RUTCLIENTE"));
+                            cli.setIdUsuario(rs.getString("USUARIO_IDUSUARIO"));
+                            cli.setIdComuna(rs.getString("COMUNA_IDCOMUNA"));
+                            cli.setNombreCli(rs.getString("NOMBRE"));
+                            cli.setAppellidoPC(rs.getString("APELLIDOP"));
+                            cli.setApellidoMC(rs.getString("APELLIDOM"));
+                            datos.add(cli);
+                            }
+                            }catch (Exception e){
+                                System.out.println("Los datos no se han podido listar "+e.getMessage());
+                            }
+                            return datos;
+                        }
 
     @Override
     public Cliente listarIdCliente(String RutCliente) {
-        String sql="Select * from Cliente where RUTCLIENTE="+RutCliente;
         try{
-            con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
-            while(rs.next()){
+         con=conex.getConnection();
+                CallableStatement sp_listar_clienteid = con.prepareCall("{call sp_listar_clienteid(?,?)}");
+                    sp_listar_clienteid.setString(1,RutCliente);
+                    sp_listar_clienteid.registerOutParameter(2, OracleTypes.CURSOR);
+                    sp_listar_clienteid.execute();
+                    ResultSet rs = ((OracleCallableStatement)sp_listar_clienteid).getCursor(2);
+                    while(rs.next()){
                 
-                cli.setRutCliente(rs.getString("RUTCLIENTE"));
-                cli.setIdUsuario(rs.getString("USUARIO_IDUSUARIO"));
-                cli.setIdComuna(rs.getString("COMUNA_IDCOMUNA"));
-                cli.setNombreCli(rs.getString("NOMBRE"));
-                cli.setAppellidoPC(rs.getString("APELLIDOP"));
-                cli.setApellidoMC(rs.getString("APELLIDOM"));
-               
-                
-            }
-        }catch (Exception e){
-            System.out.println("No se a podido listar"+ e.getMessage());
-        }
-        return cli;
-    }
+                        cli.setRutCliente(rs.getString("RUTCLIENTE"));
+                        cli.setIdUsuario(rs.getString("USUARIO_IDUSUARIO"));
+                        cli.setIdComuna(rs.getString("COMUNA_IDCOMUNA"));
+                        cli.setNombreCli(rs.getString("NOMBRE"));
+                        cli.setAppellidoPC(rs.getString("APELLIDOP"));
+                        cli.setApellidoMC(rs.getString("APELLIDOM"));
+                        }
+                        }catch (Exception e){
+                            System.out.println("No se a podido listar"+ e.getMessage());
+                        }
+                        return cli;
+                    }
 
     @Override
     public boolean addCliente(Cliente cli) {
         String sql="insert into CLIENTE(RUTCLIENTE, USUARIO_IDUSUARIO, COMUNA_IDCOMUNA, NOMBRE, APELLIDOP, APELLIDOM) "
                 +  "values('"+cli.getRutCliente()+"','"+cli.getIdUsuario()+"','"+cli.getIdComuna()+"','"+cli.getNombreCli()+"','"+cli.getAppellidoPC()+"','"+cli.getApellidoMC()+"')";
         try{
-            con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+             con=conex.getConnection();
+              CallableStatement sp_insertar_cliente = con.prepareCall("{call sp_insertar_cliente(?,?,?,?,?,?)}");
+                sp_insertar_cliente.setString(1,cli.getRutCliente());
+                sp_insertar_cliente.setString(2,cli.getIdUsuario());
+                sp_insertar_cliente.setString(3,cli.getIdComuna());
+                sp_insertar_cliente.setString(4,cli.getNombreCli());
+                sp_insertar_cliente.setString(5,cli.getAppellidoPC());
+                sp_insertar_cliente.setString(6,cli.getApellidoMC());
+                sp_insertar_cliente.execute();
+ 
         }catch(Exception e){
             System.out.println("No se ha podido insertar los datos"+ e.getMessage());
         }
@@ -89,11 +101,16 @@ public class ClienteDAO implements CrudCliente{
     @Override
     public boolean editCliente(Cliente cli) {
         try{
-            String sql="update CLIENTE set RUTCLIENTE='"+cli.getRutCliente()+"', USUARIO_IDUSUARIO='"+cli.getIdUsuario()+"', "
-                + "COMUNA_IDCOMUNA='"+cli.getIdComuna()+"', NOMBRE='"+cli.getNombreCli()+"', APELLIDOP='"+cli.getAppellidoPC()+"', APELLIDOM='"+cli.getApellidoMC()+"'where RUTCLIENTE="+cli.getRutCliente();
-            con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+             con=conex.getConnection();
+              CallableStatement sp_actualizar_cliente = con.prepareCall("{call sp_actualizar_cliente(?,?,?,?,?,?)}");
+                sp_actualizar_cliente.setString(1,cli.getRutCliente());
+                sp_actualizar_cliente.setString(2,cli.getIdUsuario());
+                sp_actualizar_cliente.setString(3,cli.getIdComuna());
+                sp_actualizar_cliente.setString(4,cli.getNombreCli());
+                sp_actualizar_cliente.setString(5,cli.getAppellidoPC());
+                sp_actualizar_cliente.setString(6,cli.getApellidoMC());
+                sp_actualizar_cliente.execute();
+ 
         }catch(Exception e){
             System.out.println("No se ha podido editar los datos"+ e.getMessage());
         }
@@ -102,12 +119,12 @@ public class ClienteDAO implements CrudCliente{
 
     @Override
     public boolean deleteCliente(String RutCliente) {
-        String sql="delete from CLIENTE where RUTCLIENTE="+RutCliente;
         
         try{
-            con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+             con=conex.getConnection();
+              CallableStatement sp_eliminar_cliente = con.prepareCall("{call sp_eliminar_cliente(?)}");
+                sp_eliminar_cliente.setString(1,RutCliente);
+                sp_eliminar_cliente.execute();
         }catch(Exception e){
             System.out.println("No se ha podido eliminar el cliente"+ e.getMessage());
         }

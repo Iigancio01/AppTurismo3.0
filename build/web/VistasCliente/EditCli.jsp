@@ -19,7 +19,7 @@
             <h1>Modificar Departamento</h1>
             <form action="ControladorCliente">
                 Rut Cliente:<br>
-                <input class="form-control" style="background-color: #ccc "type="text" name="txtRutCliente" value="<%= cli.getRutCliente()%> " readonly><br>
+                <input class="form-control" style="background-color: #ccc "type="text" name="txtRutCliente" value="<%= cli.getRutCliente()%>" readonly><br>
                 Id Usuario:<br>
                 <input class="form-control" type="text" name="txtIdUsuario" value="<%= cli.getIdUsuario()%>"><br>
                 Id Comuna:<br>

@@ -3,15 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/src/java/ModeloDAO/DepartamentosDAO.java</file>
-            <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/src/java/Controlador/ControladorEstadoDpto.java</file>
-            <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/src/java/Modelo/Departamentos.java</file>
-            <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/src/java/Interfaces/CrudDepartamento.java</file>
-            <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/web/VistasItem/ListarItem.jsp</file>
-            <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/web/VistasDpto/ListaDepDispo.jsp</file>
-            <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/web/VistasDpto/DisponiDep.jsp</file>
-            <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/src/java/Controlador/ControladorDpto.java</file>
-            <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/web/InicioAdmin.jsp</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/web/VistasCliente/EditCli.jsp</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/web/VistasItem/EditItem.jsp</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/src/java/ModeloDAO/ClienteDAO.java</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/src/java/ModeloDAO/ItemsDAO.java</file>
         </group>
     </open-files>
 </project-private>
