@@ -21,4 +21,5 @@ public interface CrudDepartamento {
     public List listarDptoNoDispo();
     public boolean editDptoEstadoD(String IdDepartamento);
     public boolean editDptoEstadoND(String IdDepartamento);
+
 }

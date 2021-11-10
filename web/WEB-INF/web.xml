@@ -28,6 +28,10 @@
         <servlet-name>ControladorEstadoDpto</servlet-name>
         <servlet-class>Controlador.ControladorEstadoDpto</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorMantencion</servlet-name>
+        <servlet-class>Controlador.ControladorMantencion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>ControladorEstadoDpto</servlet-name>
         <url-pattern>/ControladorEstadoDpto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorMantencion</servlet-name>
+        <url-pattern>/ControladorMantencion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

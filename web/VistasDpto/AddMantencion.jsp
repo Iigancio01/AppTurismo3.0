@@ -17,19 +17,18 @@
                     String id= (String)request.getAttribute("IdDepartamento");
                     Departamentos dpto=(Departamentos)dptoDAO.listarIdDpto(id);
              %>
-            <h1>Modificar Departamento</h1>
-            <form action="ControladorDpto">
+            <h1>Nuevo mantenimiento</h1>
+            <form action="ControladorMantencion">
+                Id Mantenimiento<br>
+                <input class="form-control" type="text" name="txtIdMantenimiento"><br>
+          
                 Id Departamento:<br>
                 <input class="form-control" style="background-color: #ccc " type="text" name="txtIdDep" value="<%=dpto.getIdDepartamento()%>" readonly><br>
-                Tarifa:<br>
-                <input class="form-control" type="text" name="txtTarifa" value="<%= dpto.getIdTarifa() %>"><br>
-                Comuna:<br>
-                <input class="form-control" type="text" name="txtcomuna" value="<%= dpto.getIdComuna() %>"><br>
-                Direccion:<br>
-                <input class="form-control" type="text" name="txtDireccion" value="<%= dpto.getDireccion() %>"><br>
-                Descripcion:<br>
-                <input class="form-control" type="text" name="txtDescripcion" value="<%= dpto.getDescripcion() %>"><br>
-                <button class="btn btn-primary" type="submit" name="accion" value="ActualizarDep">Actualizar Dpto</button><br>
+         
+                Fecha de Mantenimiento:<br>
+                <input class="form-control" type="date"   name="txtfechainicio">
+                <br>
+                <button class="btn btn-primary" type="submit" name="accion" value="NuevoMantenimiento">Agregar mantenimiento</button><br>
             </form>
              </div>
         </div>
