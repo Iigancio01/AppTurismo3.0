@@ -87,8 +87,8 @@ public class ServiciosDAO implements CrudServicios {
     @Override
     public boolean editServicio(Servicios se) {
         try{
-            String sql="update SUB_FAMILIA_SERVICIO set IDSUB_FAMILIA_SERVICIO='"+se.getIdSubFamiliaServicio()+"', FAMILIA_SERVICIO_IDFAMILIA_SERVICIO='"+se.getIdFamiliaServicio()+"', "
-                + "NOM_SUBFAMILIA='"+se.getNombreSubFamilia();
+            String sql="update SUB_FAMILIA_SERVICIO set IDSUB_FAMILIA_SERVICIO='"+se.getIdSubFamiliaServicio()+"', FAMILIA_SERVICIO_IDFAMILIA_SERVICIO='"+se.getIdFamiliaServicio()+"',"
+                + "NOM_SUBFAMILIA='"+se.getNombreSubFamilia()+"'where IDSUB_FAMILIA_SERVICIO="+se.getIdSubFamiliaServicio();
             con=conex.getConnection();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();

@@ -36,6 +36,10 @@
         <servlet-name>ControladorServicios</servlet-name>
         <servlet-class>Controlador.ControladorServicios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorVistaCliente</servlet-name>
+        <servlet-class>Controlador.ControladorVistaCliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -72,6 +76,10 @@
         <servlet-name>ControladorServicios</servlet-name>
         <url-pattern>/ControladorServicios</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorVistaCliente</servlet-name>
+        <url-pattern>/ControladorVistaCliente</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -84,5 +92,9 @@
     <filter-mapping>
         <filter-name>FiltroSesiones</filter-name>
         <url-pattern>/InicioAdmin.jsp</url-pattern>
+    </filter-mapping>
+        <filter-mapping>
+        <filter-name>FiltroSesiones</filter-name>
+        <url-pattern>/InicioCliente.jsp</url-pattern>
     </filter-mapping>
 </web-app>

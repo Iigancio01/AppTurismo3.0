@@ -105,11 +105,14 @@ public class FiltroSesiones implements Filter {
         HttpSession sesion = ((HttpServletRequest)request).getSession();
         
         
-        if(sesion.getAttribute("admin") != null){
+        if(sesion.getAttribute("admin") != null || sesion.getAttribute("cliente") != null ){
            chain.doFilter(request, response); 
         }else{
             ((HttpServletResponse)response).sendRedirect("/AppTurismo3.0/Error.jsp");
         }
+        
+
+        
         
         if (debug) {
             log("FiltroSesiones:doFilter()");

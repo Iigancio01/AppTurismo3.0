@@ -40,6 +40,9 @@
                             <span>Arriendos</span>
                         </a>
                         </div>
+                       <div class="menu d-flex align-items-center">
+                        <h5>Bienvenido/a: <%= request.getSession().getAttribute("cliente")%></h5>
+                       </div>
                        <div class="d-flex flex-row align-items-center">
                            <a href="/AppTurismo3.0/Login.jsp"class="btn-perfil">
                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -136,6 +139,12 @@
         
         <!-- Caracteristicas -->
         <section>
+           <main class="main col">
+                
+                <iframe name="ContenedorPrincipal" style="height:100%; width:100%;"></iframe>
+            </main> 
+            
+      
             <div class=" mb-3">
                 <!-- seccion 1 -->
                 <div class='container mb-4'>
