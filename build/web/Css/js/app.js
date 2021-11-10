@@ -1,4 +1,4 @@
-
+ meta-charset-utf-8 
 //Animaciones Test
 gsap.from(".bienvenido-a", {
     scrollTrigger: ".bienvenido-a", // start the animation when ".box" enters the viewport (once)

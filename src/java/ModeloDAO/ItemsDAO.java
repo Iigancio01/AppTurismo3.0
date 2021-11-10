@@ -121,7 +121,6 @@ public class ItemsDAO implements CrudItems {
              con=conex.getConnection();
                 CallableStatement sp_eliminar_item = con.prepareCall("{call sp_eliminar_item(?)}");
                     sp_eliminar_item.setString(1,IdItem);
-
                     sp_eliminar_item.execute();
 
         }catch(Exception e){

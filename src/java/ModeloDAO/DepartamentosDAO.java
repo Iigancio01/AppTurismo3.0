@@ -8,11 +8,14 @@ import Config.Conexion;
 import Interfaces.CrudDepartamento;
 import Modelo.Departamentos;
 import static java.lang.Integer.parseInt;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import oracle.jdbc.OracleCallableStatement;
+import oracle.jdbc.OracleTypes;
 
 /**
  *
@@ -29,11 +32,12 @@ public class DepartamentosDAO implements CrudDepartamento {
     @Override
     public List listarDpto() {
         List<Departamentos> datos=new ArrayList<>();
-        String sql="Select * from DEPARTAMENTO where ESTADODPTO=1";
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
+                CallableStatement sp_listar_dpto = con.prepareCall("{call sp_listar_dpto(?)}");
+                    sp_listar_dpto.registerOutParameter(1, OracleTypes.CURSOR);
+                    sp_listar_dpto.execute();
+                    ResultSet rs = ((OracleCallableStatement)sp_listar_dpto).getCursor(1);
             while(rs.next()){
                 Departamentos d= new Departamentos();
                 d.setIdDepartamento(rs.getString("IDDEPARTAMENTO"));
@@ -51,11 +55,13 @@ public class DepartamentosDAO implements CrudDepartamento {
 
     @Override
     public Departamentos listarIdDpto(String IdDepartamento) {
-        String sql="Select * from DEPARTAMENTO where IDDEPARTAMENTO="+IdDepartamento;
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
+                CallableStatement sp_listar_deptoid = con.prepareCall("{call sp_listar_deptoid(?,?)}");
+                    sp_listar_deptoid.setString(1,IdDepartamento);
+                    sp_listar_deptoid.registerOutParameter(2, OracleTypes.CURSOR);
+                    sp_listar_deptoid.execute();
+                    ResultSet rs = ((OracleCallableStatement)sp_listar_deptoid).getCursor(2);
             while(rs.next()){
                 
                 dep.setIdDepartamento(rs.getString("IDDEPARTAMENTO"));
@@ -74,12 +80,15 @@ public class DepartamentosDAO implements CrudDepartamento {
     
     @Override
     public boolean addDpto(Departamentos dpto) {
-        String sql="insert into DEPARTAMENTO(IDDEPARTAMENTO, TARIFA_IDTARIFA, COMUNA_IDCOMUNA, DIRECCION, DESCRIPCION) "
-                +  "values('"+dpto.getIdDepartamento()+"','"+dpto.getIdTarifa()+"','"+dpto.getIdComuna()+"','"+dpto.getDireccion()+"','"+dpto.getDescripcion()+"')";
-        try{
+          try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+             CallableStatement sp_insertar_dpto = con.prepareCall("{call sp_insertar_dpto(?,?,?,?,?)}");
+                sp_insertar_dpto.setString(1,dpto.getIdDepartamento());
+                sp_insertar_dpto.setString(2,dpto.getIdTarifa());
+                sp_insertar_dpto.setString(3,dpto.getIdComuna());
+                sp_insertar_dpto.setString(4,dpto.getDireccion());
+                sp_insertar_dpto.setString(5,dpto.getDescripcion());
+                sp_insertar_dpto.execute();;
         }catch(Exception e){
             System.out.println("No se ha podido insertar los datos"+ e.getMessage());
         }
@@ -88,13 +97,15 @@ public class DepartamentosDAO implements CrudDepartamento {
 
     @Override
     public boolean editDpto(Departamentos dpto) {
-        
         try{
-            String sql="update DEPARTAMENTO set IDDEPARTAMENTO='"+dpto.getIdDepartamento()+"', TARIFA_IDTARIFA='"+dpto.getIdTarifa()+"', "
-                + "COMUNA_IDCOMUNA='"+dpto.getIdComuna()+"', DIRECCION='"+dpto.getDireccion()+"', DESCRIPCION='"+dpto.getDescripcion()+"'where IDDEPARTAMENTO="+dpto.getIdDepartamento();
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+              CallableStatement sp_actualizar_dpto = con.prepareCall("{call sp_actualizar_dpto(?,?,?,?,?)}");
+                sp_actualizar_dpto.setString(1,dpto.getIdDepartamento());
+                sp_actualizar_dpto.setString(2,dpto.getIdTarifa());
+                sp_actualizar_dpto.setString(3,dpto.getIdComuna());
+                sp_actualizar_dpto.setString(4,dpto.getDireccion());
+                sp_actualizar_dpto.setString(5,dpto.getDescripcion());
+                sp_actualizar_dpto.execute();
         }catch(Exception e){
             System.out.println("No se ha podido editar los datos"+ e.getMessage());
         }
@@ -103,12 +114,14 @@ public class DepartamentosDAO implements CrudDepartamento {
 
     @Override
     public boolean deleteDpto(String IdDepartamento) {
-        String sql="delete from DEPARTAMENTO where IDDEPARTAMENTO="+IdDepartamento;
         
         try{
-            con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+           con=conex.getConnection();
+                CallableStatement sp_eliminar_dpto = con.prepareCall("{call sp_eliminar_dpto(?)}");
+                    sp_eliminar_dpto.setString(1,IdDepartamento);
+
+                    sp_eliminar_dpto.execute();
+
         }catch(Exception e){
             System.out.println("No se ha podido eliminar el departamento"+ e.getMessage());
         }
@@ -118,11 +131,12 @@ public class DepartamentosDAO implements CrudDepartamento {
     @Override
     public List listarDptoDispo() {
        List<Departamentos> datos=new ArrayList<>();
-        String sql="Select * from DEPARTAMENTO where ESTADODPTO=1";
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
+                CallableStatement sp_listar_dpto = con.prepareCall("{call sp_listar_dpto(?)}");
+                    sp_listar_dpto.registerOutParameter(1, OracleTypes.CURSOR);
+                    sp_listar_dpto.execute();
+                    ResultSet rs = ((OracleCallableStatement)sp_listar_dpto).getCursor(1);
             while(rs.next()){
                 Departamentos d= new Departamentos();
                 d.setIdDepartamento(rs.getString("IDDEPARTAMENTO"));
@@ -142,11 +156,12 @@ public class DepartamentosDAO implements CrudDepartamento {
     @Override
     public List listarDptoNoDispo() {
         List<Departamentos> datos=new ArrayList<>();
-        String sql="Select * from DEPARTAMENTO where ESTADODPTO=0";
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
+                CallableStatement sp_listar_dpto_nodisp = con.prepareCall("{call sp_listar_dpto_nodisp(?)}");
+                    sp_listar_dpto_nodisp.registerOutParameter(1, OracleTypes.CURSOR);
+                    sp_listar_dpto_nodisp.execute();
+                    ResultSet rs = ((OracleCallableStatement)sp_listar_dpto_nodisp).getCursor(1);
             while(rs.next()){
                 Departamentos d= new Departamentos();
                 d.setIdDepartamento(rs.getString("IDDEPARTAMENTO"));
@@ -166,10 +181,11 @@ public class DepartamentosDAO implements CrudDepartamento {
     @Override
     public boolean editDptoEstadoD(String IdDepartamento) {
        try{
-            String sql="update DEPARTAMENTO set ESTADODPTO=1 where IDDEPARTAMENTO="+IdDepartamento;
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+                CallableStatement sp_actualizar_estado_dptoD = con.prepareCall("{call sp_actualizar_estado_dptoD(?)}");
+                    sp_actualizar_estado_dptoD.setString(1,IdDepartamento);
+                    sp_actualizar_estado_dptoD.execute();
+
         }catch(Exception e){
             System.out.println("No se ha podido editar los datos"+ e.getMessage());
         }
@@ -179,10 +195,10 @@ public class DepartamentosDAO implements CrudDepartamento {
     @Override
     public boolean editDptoEstadoND(String IdDepartamento) {
        try{
-            String sql="update DEPARTAMENTO set ESTADODPTO=0 where IDDEPARTAMENTO="+IdDepartamento;
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+                CallableStatement sp_actualizar_estado_dptoND = con.prepareCall("{call sp_actualizar_estado_dptoND(?)}");
+                    sp_actualizar_estado_dptoND.setString(1,IdDepartamento);
+                    sp_actualizar_estado_dptoND.execute();
         }catch(Exception e){
             System.out.println("No se ha podido editar los datos"+ e.getMessage());
         }

@@ -26,7 +26,7 @@
                 <input class="form-control" style="background-color: #ccc " type="text" name="txtIdDep" value="<%=dpto.getIdDepartamento()%>" readonly><br>
          
                 Fecha de Mantenimiento:<br>
-                <input class="form-control" type="date"   name="txtfechainicio">
+                <input class="form-control" type="datetime-local"   name="txtfechainicio">
                 <br>
                 <button class="btn btn-primary" type="submit" name="accion" value="NuevoMantenimiento">Agregar mantenimiento</button><br>
             </form>

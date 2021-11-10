@@ -63,7 +63,7 @@ public class ControladorMantencion extends HttpServlet {
 
             man.setIdMantencion(IdMantencion);
             man.setIdDepartmentoM(IdDepartamento);
-            man.setFechaM(FechaM);
+            man.setFechaM(FechaM.replace('T',' '));
 
             manDAO.addDpto(man);
             
