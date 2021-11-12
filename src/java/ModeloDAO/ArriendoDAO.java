@@ -8,11 +8,14 @@ import Config.Conexion;
 import Interfaces.CrudArriendo;
 import Modelo.Arriendo;
 import static java.lang.Integer.parseInt;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import oracle.jdbc.OracleCallableStatement;
+import oracle.jdbc.OracleTypes;
 
 /**
  *
@@ -29,11 +32,12 @@ public class ArriendoDAO implements CrudArriendo{
     @Override
     public List listarArriendo() {
         List<Arriendo> datos=new ArrayList<>();
-        String sql="Select * from DETAIL_ARRIENDO";
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
+                CallableStatement sp_listar_arriendo = con.prepareCall("{call sp_listar_arriendo(?)}");  
+                        sp_listar_arriendo.registerOutParameter(1, OracleTypes.CURSOR);
+                        sp_listar_arriendo.execute();
+                        ResultSet rs = ((OracleCallableStatement)sp_listar_arriendo).getCursor(1);
             while(rs.next()){
                 Arriendo arri= new Arriendo();
                 arri.setIdArriendo(rs.getString("IDDETAIL_ARRIENDO"));
@@ -52,11 +56,13 @@ public class ArriendoDAO implements CrudArriendo{
 
     @Override
     public Arriendo listarIdArriendo(String IdArriendo) {
-         String sql="Select * from DETAIL_ARRIENDO where IDDETAIL_ARRIENDO="+IdArriendo;
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
+            CallableStatement sp_listar_arriendoid = con.prepareCall("{call sp_listar_arriendoid(?,?)}");
+                    sp_listar_arriendoid.setString(1,IdArriendo);
+                    sp_listar_arriendoid.registerOutParameter(2, OracleTypes.CURSOR);
+                    sp_listar_arriendoid.execute();
+                    ResultSet rs = ((OracleCallableStatement)sp_listar_arriendoid).getCursor(2);
             while(rs.next()){
                 arri.setIdArriendo(rs.getString("IDDETAIL_ARRIENDO"));
                 arri.setIdDepartamento(rs.getString("DEPARTAMENTO_IDDEPARTAMENTO"));
@@ -74,14 +80,16 @@ public class ArriendoDAO implements CrudArriendo{
 
     @Override
     public boolean addArriendo(Arriendo arri) {
-       String sql="insert into DETAIL_ARRIENDO(IDDETAIL_ARRIENDO, DEPARTAMENTO_IDDEPARTAMENTO, MASTER_ARRIENDO_IDMASTER_ARRIENDO, FECHA_INICIO, FECHA_FIN, MONTO) "
-                +  "values('"+arri.getIdArriendo()+"','"+arri.getIdDepartamento()+"','"+arri.getIdMasterArriendo()+"','"+arri.getFechaInicio()+"',"
-                +  "'"+arri.getFechaFin()+"','"+arri.getMonto()+"')";
-        
-        try{
+  try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+                    CallableStatement sp_insertar_arriendo = con.prepareCall("{call sp_insertar_arriendo(?,?,?,?,?,?)}");
+                           sp_insertar_arriendo.setString(1,arri.getIdArriendo());
+                           sp_insertar_arriendo.setString(2,arri.getIdDepartamento());
+                           sp_insertar_arriendo.setString(3,arri.getIdMasterArriendo());
+                           sp_insertar_arriendo.setDate(4,arri.getFechaInicio());
+                           sp_insertar_arriendo.setDate(5,arri.getFechaFin());
+                           sp_insertar_arriendo.setInt(6,arri.getMonto());
+                           sp_insertar_arriendo.execute();
         }catch(Exception e){
              System.out.println("No se ha podido insertar los datos"+ e.getMessage()); 
         }
@@ -91,12 +99,15 @@ public class ArriendoDAO implements CrudArriendo{
     @Override
     public boolean editArriendo(Arriendo arri) {
         try{
-            String sql="update DETAIL_ARRIENDO set IDDETAIL_ARRIENDO='"+arri.getIdArriendo()+"',DEPARTAMENTO_IDDEPARTAMENTO='"+arri.getIdDepartamento()+"',"
-                    + "MASTER_ARRIENDO_IDMASTER_ARRIENDO='"+arri.getIdMasterArriendo()+"',FECHA_INICIO='"+arri.getFechaInicio()+"', FECHA_FIN='"+arri.getFechaFin()+"',"
-                    + "MONTO='"+arri.getMonto()+"'where IDDETAIL_ARRIENDO="+arri.getIdArriendo();
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+                        CallableStatement sp_actualizar_arriendo = con.prepareCall("{call sp_actualizar_arriendo(?,?,?,?,?,?)}");
+                                        sp_actualizar_arriendo.setString(1,arri.getIdArriendo());
+                                        sp_actualizar_arriendo.setString(2,arri.getIdDepartamento());
+                                        sp_actualizar_arriendo.setString(3,arri.getIdMasterArriendo());
+                                        sp_actualizar_arriendo.setDate(4,arri.getFechaInicio());
+                                        sp_actualizar_arriendo.setDate(5,arri.getFechaFin());
+                                        sp_actualizar_arriendo.setInt(6,arri.getMonto());
+                                        sp_actualizar_arriendo.execute();
         }catch(Exception e){
             System.out.println("No se ha podido editar los datos"+ e.getMessage());
         }
@@ -109,8 +120,9 @@ public class ArriendoDAO implements CrudArriendo{
         
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+            CallableStatement sp_eliminar_arriendo = con.prepareCall("{call sp_eliminar_arriendo(?)}");
+                sp_eliminar_arriendo.setString(1,IdArriendo);
+                sp_eliminar_arriendo.execute();
         }catch(Exception e){
             System.out.println("No se ha podido eliminar el arriendo"+ e.getMessage());
         }

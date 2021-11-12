@@ -30,7 +30,6 @@ public class ClienteDAO implements CrudCliente{
     @Override
     public List listarCliente() {
        List<Cliente> datos=new ArrayList<>();
-        String sql="Select * from CLIENTE";
         try{
                con=conex.getConnection();
                 CallableStatement sp_listar_cliente = con.prepareCall("{call sp_listar_cliente(?)}");  
@@ -79,9 +78,7 @@ public class ClienteDAO implements CrudCliente{
 
     @Override
     public boolean addCliente(Cliente cli) {
-        String sql="insert into CLIENTE(RUTCLIENTE, USUARIO_IDUSUARIO, COMUNA_IDCOMUNA, NOMBRE, APELLIDOP, APELLIDOM) "
-                +  "values('"+cli.getRutCliente()+"','"+cli.getIdUsuario()+"','"+cli.getIdComuna()+"','"+cli.getNombreCli()+"','"+cli.getAppellidoPC()+"','"+cli.getApellidoMC()+"')";
-        try{
+           try{
              con=conex.getConnection();
               CallableStatement sp_insertar_cliente = con.prepareCall("{call sp_insertar_cliente(?,?,?,?,?,?)}");
                 sp_insertar_cliente.setString(1,cli.getRutCliente());

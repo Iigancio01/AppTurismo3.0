@@ -7,11 +7,14 @@ package ModeloDAO;
 import Config.Conexion;
 import Interfaces.CrudServicios;
 import Modelo.Servicios;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import oracle.jdbc.OracleCallableStatement;
+import oracle.jdbc.OracleTypes;
 
 /**
  *
@@ -31,11 +34,12 @@ public class ServiciosDAO implements CrudServicios {
     @Override
     public List listarServicios() {
         List<Servicios> datos=new ArrayList<>();
-        String sql="Select * from SUB_FAMILIA_SERVICIO";
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
+           CallableStatement sp_listar_servicio = con.prepareCall("{call sp_listar_servicio(?)}");  
+                        sp_listar_servicio.registerOutParameter(1, OracleTypes.CURSOR);
+                        sp_listar_servicio.execute();
+                        ResultSet rs = ((OracleCallableStatement)sp_listar_servicio).getCursor(1);
             while(rs.next()){
                 Servicios se= new Servicios();
                 se.setIdSubFamiliaServicio(rs.getString("IDSUB_FAMILIA_SERVICIO"));
@@ -55,8 +59,11 @@ public class ServiciosDAO implements CrudServicios {
          String sql="Select * from SUB_FAMILIA_SERVICIO where IDSUB_FAMILIA_SERVICIO="+IdSubFamiliaServicio;
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
+            CallableStatement sp_listar_servicioid = con.prepareCall("{call sp_listar_servicioid(?,?)}");
+                    sp_listar_servicioid.setString(1,IdSubFamiliaServicio);
+                    sp_listar_servicioid.registerOutParameter(2, OracleTypes.CURSOR);
+                    sp_listar_servicioid.execute();
+                    ResultSet rs = ((OracleCallableStatement)sp_listar_servicioid).getCursor(2);
             while(rs.next()){
               se.setIdSubFamiliaServicio(rs.getString("IDSUB_FAMILIA_SERVICIO"));
               se.setIdFamiliaServicio(rs.getString("FAMILIA_SERVICIO_IDFAMILIA_SERVICIO"));
