@@ -155,7 +155,7 @@
             <div class="col-12 col-md-6 col-lg-4 imagen-contenedor mb-4" id='img4'>
                 <a href="#">
                         
-                        <img src="Css/img/vina-del-mar-263227_640.jpg" class="d-block w-100" alt=""/>
+                        <img src="Css/img/Valdivia.jpg" class="d-block w-100" alt=""/>
                 </a>
                 <div class="texto-imagen">
                         
@@ -163,13 +163,13 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
                         </svg>
-                            Viña del Mar
+                            Valdivia
                     </h3>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 imagen-contenedor mb-4" id='img5'>
                 <a href="#">
-                    <img src="Css/img/coquimbo.jpg" class="d-block w-100" alt=""/>
+                    <img src="Css/img/Iquique-Chile.jpg" class="d-block w-100" alt=""/>
                 </a>
                 <div class="texto-imagen">
                         
@@ -177,7 +177,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
                         </svg>
-                            Coquimbo
+                            Iquique
                     </h3>
                 </div>
             </div>
@@ -185,7 +185,7 @@
             <div class="col-12 col-md-6 col-lg-4 imagen-contenedor mb-4" id='img6'>
                 <a href="#">
                     
-                    <img src="Css/img/pucon.png" class="d-block w-100" alt=""/>
+                    <img src="Css/img/puerto-montt.jpg" class="d-block w-100" alt=""/>
                 </a>
                 <div class="texto-imagen">
                         
@@ -193,7 +193,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
                         </svg>
-                        Pucón  
+                        Puerto Montt 
                     </h3>
                 </div>
             </div>

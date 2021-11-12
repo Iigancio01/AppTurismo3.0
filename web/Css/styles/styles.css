@@ -186,7 +186,12 @@ section .titulo {
 }
 
 section .titulo1 {
-  font-size: 26px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+section .titulo2 {
+  font-size: 29px;
   font-weight: 700;
 }
 
@@ -537,6 +542,12 @@ li:first-child {
     top: 0;
     width: 100%;
     
+}
+
+/* Modal */
+
+.modal-dialog {
+    max-width: 1000px;
 }
 
 
