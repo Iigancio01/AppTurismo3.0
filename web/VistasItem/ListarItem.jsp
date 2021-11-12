@@ -26,6 +26,7 @@
                     </div>
                       <div  class="card-block">
                         <a class="btn btn-success" href="ControladorItems?accion=addItem" target="ContenedorPrincipal">Agregar nuevo</a>
+                        <a class="btn btn-success" href="ControladorPdfChecklist" target="ContenedorPrincipal">Generar checklist de estado</a>
                     </div>                 
 
                     <div  class="card-body">
