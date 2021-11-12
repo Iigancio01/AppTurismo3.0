@@ -19,7 +19,7 @@
                 <div class="row py-2">
                     <!-- Logo -->
                     <div class="col-5 d-flex">
-                        <a href="index.html" class="logo me-2">
+                        <a href="/AppTurismo3.0/" class="logo me-2">
                             <strong >Turismo Real Cl</strong>
                         </a>
                     </div>
@@ -32,21 +32,19 @@
                         </div> 
 
                         <div class="menu-enlaces d-flex align-items-center">
-                        <a href="index.jsp" class="px-4  d-flex align-items-center text-center">
+                        <a href="/AppTurismo3.0/VistaArriendoNoS"  class="px-4  d-flex align-items-center text-center">
                             <span>Arriendos</span>
                         </a>
                         </div>
-                        <div class="menu d-flex align-items-center">
-                        <h5>Bienvenido/a: <%= request.getSession().getAttribute("cliente")%></h5>
-                        </div>
-                        <div class="d-flex flex-row align-items-center">
-                            <a href="/AppTurismo3.0/ControladorCerrarSesion"class="btn-perfil">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                                </svg>
-                                <span>Cerrar sesion</span>
-                            </a>
-                        </div>
+
+                       <div class="d-flex flex-row align-items-center">
+                           <a href="/AppTurismo3.0/Login.jsp"class="btn-perfil">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                               </svg>
+                               <span>Entrar</span>
+                           </a>
+                       </div>
                     </div>
                 </div>
             </div>
@@ -76,7 +74,7 @@
             <!-- ficha arriendo -->
             <div class="row d-flex justify-content-center m-4 ">
                 <div class="col-6 d-flex align-items-center ficha-departamento" id="ficha-departamento">  
-                    <a href="ControladorVistaCliente?accion=DepartamentoSesion" method="POST" id="link"></a>
+                    <a href="DepartamentoNoS.jsp" id="link"></a>
                     <div class="col-3 p-1">
                         <img src="Css/img/departamento1.jpg" class=" imagen-departamento w-100" alt=""/>
                     </div>

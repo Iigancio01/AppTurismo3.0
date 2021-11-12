@@ -40,6 +40,14 @@
         <servlet-name>ControladorVistaCliente</servlet-name>
         <servlet-class>Controlador.ControladorVistaCliente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorArriendo</servlet-name>
+        <servlet-class>Controlador.ControladorArriendo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorPdfCheckin</servlet-name>
+        <servlet-class>Controlador.ControladorPdfCheckin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -80,6 +88,14 @@
         <servlet-name>ControladorVistaCliente</servlet-name>
         <url-pattern>/ControladorVistaCliente</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorArriendo</servlet-name>
+        <url-pattern>/ControladorArriendo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorPdfCheckin</servlet-name>
+        <url-pattern>/ControladorPdfCheckin</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -93,7 +109,7 @@
         <filter-name>FiltroSesiones</filter-name>
         <url-pattern>/InicioAdmin.jsp</url-pattern>
     </filter-mapping>
-        <filter-mapping>
+    <filter-mapping>
         <filter-name>FiltroSesiones</filter-name>
         <url-pattern>/InicioCliente.jsp</url-pattern>
     </filter-mapping>

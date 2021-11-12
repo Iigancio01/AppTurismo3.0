@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link href="../Css/styles/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="Css/styles/styles.css" rel="stylesheet" type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
    
@@ -39,14 +39,14 @@
                         <div class="menu d-flex align-items-center">
                         <h5>Bienvenido/a: <%= request.getSession().getAttribute("cliente")%></h5>
                         </div>
-                       <div class="d-flex flex-row align-items-center">
-                           <a href="/AppTurismo3.0/Login.jsp"class="btn-perfil">
-                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                               </svg>
-                               <span>Entrar</span>
-                           </a>
-                       </div>
+                        <div class="d-flex flex-row align-items-center">
+                            <a href="/AppTurismo3.0/ControladorCerrarSesion"class="btn-perfil">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                </svg>
+                                <span>Cerrar sesion</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,9 +76,9 @@
             <!-- ficha arriendo -->
             <div class="row d-flex justify-content-center m-4 ">
                 <div class="col-6 d-flex align-items-center ficha-departamento" id="ficha-departamento">  
-                    <a href="Departamento.jsp" id="link"></a>
+                    <a href="ControladorVistaCliente?accion=DepartamentoSesion" method="POST" id="link"></a>
                     <div class="col-3 p-1">
-                        <img src="../Css/img/departamento1.jpg" class=" imagen-departamento w-100" alt=""/>
+                        <img src="Css/img/departamento1.jpg" class=" imagen-departamento w-100" alt=""/>
                     </div>
                     <div class="col-9 ms-2 p-1 d-block ">
                         <div class="col-12 mb-3">
@@ -111,7 +111,7 @@
                     <a href="#" id="link"></a>  
                     <div class="col-3 p-1   ">
                         <a href="#">
-                                <img src="../Css/img/Departamento2.jpg" class=" imagen-departamento w-100" alt=""/>
+                                <img src="Css/img/Departamento2.jpg" class=" imagen-departamento w-100" alt=""/>
                         </a>
                     </div>
                     <div class="col-9 ms-2 p-1 d-block ">
@@ -145,7 +145,7 @@
                     <a href="#" id="link"></a>   
                     <div class="col-3 p-1   ">
                         <a href="#">
-                                <img src="../Css/img/departamento3.jpg" class=" imagen-departamento w-100" alt=""/>
+                                <img src="Css/img/departamento3.jpg" class=" imagen-departamento w-100" alt=""/>
                         </a>
                     </div>
                     <div class="col-9 ms-2 p-1 d-block ">
@@ -177,7 +177,7 @@
                 <div class="col-6 d-flex align-items-center ficha-departamento" id="ficha-departamento">  
                     <a href="Departamento.jsp" id="link"></a>
                     <div class="col-3 p-1">
-                        <img src="../Css/img/departamento1.jpg" class=" imagen-departamento w-100" alt=""/>
+                        <img src="Css/img/departamento1.jpg" class=" imagen-departamento w-100" alt=""/>
                     </div>
                     <div class="col-9 ms-2 p-1 d-block ">
                         <div class="col-12 mb-3">
@@ -210,7 +210,7 @@
                     <a href="#" id="link"></a>  
                     <div class="col-3 p-1   ">
                         <a href="#">
-                                <img src="../Css/img/Departamento2.jpg" class=" imagen-departamento w-100" alt=""/>
+                                <img src="Css/img/Departamento2.jpg" class=" imagen-departamento w-100" alt=""/>
                         </a>
                     </div>
                     <div class="col-9 ms-2 p-1 d-block ">
@@ -244,7 +244,7 @@
                     <a href="#" id="link"></a>   
                     <div class="col-3 p-1   ">
                         <a href="#">
-                                <img src="../Css/img/departamento3.jpg" class=" imagen-departamento w-100" alt=""/>
+                                <img src="Css/img/departamento3.jpg" class=" imagen-departamento w-100" alt=""/>
                         </a>
                     </div>
                     <div class="col-9 ms-2 p-1 d-block ">
@@ -341,7 +341,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="../Css/js/app.js" type="text/javascript"></script>
+        <script src="Css/js/app.js" type="text/javascript"></script>
         
     </body>
 </html>

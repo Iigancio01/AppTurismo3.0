@@ -16,12 +16,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author avata
  */
-public class ControladorVistaCliente extends HttpServlet {
+public class ControladorArriendo extends HttpServlet {
 
-    String Farriendo="VistaArriendo/ArriendoCliente.jsp";
-    String ArriendosS="VistaArriendo/Arriendo.jsp";
-    String DepartamentoS="VistaArriendo/Departamento.jsp";
-    
+    String VerArriendos="VistaArriendos/ListarArriendos.jsp";
+    String VerArriendosEdit="VistaArriendos/ListarArriendosEdit.jsp";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -34,24 +32,20 @@ public class ControladorVistaCliente extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        String acceso="";
+         String acceso="";
         String action=request.getParameter("accion");
         
-        if(action.equalsIgnoreCase("ArriendosSesion")){
-            acceso=ArriendosS;
-        }else if(action.equalsIgnoreCase("ArrendarDpto")){
-         
-            acceso=Farriendo;
-        }else if(action.equalsIgnoreCase("DepartamentoSesion")){
-            
-            acceso=DepartamentoS;
+        if(action.equalsIgnoreCase("ListarArriendos")){
+            acceso=VerArriendos;
+        }else if(action.equalsIgnoreCase("ListarArriendosEdit")){
+           acceso=VerArriendosEdit; 
         }
         
         RequestDispatcher vista=request.getRequestDispatcher(acceso);
         vista.forward(request, response);
     }
 
-
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

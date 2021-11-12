@@ -36,21 +36,18 @@
                         </div> 
 
                         <div class="menu-enlaces d-flex align-items-center">
-                        <a href="index.jsp" class="px-4  d-flex align-items-center text-center">
+                        <a href="/AppTurismo3.0/VistaArriendoNoS.jsp" class="px-4  d-flex align-items-center text-center">
                             <span>Arriendos</span>
                         </a>
                         </div>
-                       <div class="menu d-flex align-items-center">
-                        <h5>Bienvenido/a: <%= request.getSession().getAttribute("cliente")%></h5>
+                       <div class="d-flex flex-row align-items-center">
+                           <a href="/AppTurismo3.0/Login.jsp"class="btn-perfil">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                               </svg>
+                               <span>Entrar</span>
+                           </a>
                        </div>
-                        <div class="d-flex flex-row align-items-center">
-                            <a href="/AppTurismo3.0/ControladorCerrarSesion"class="btn-perfil">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                                </svg>
-                                <span>Cerrar sesion</span>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -75,7 +72,7 @@
                             </span>
                         </div>
                         <div class="d-flex justify-content-end align-items-center ">
-                            <a href="ControladorVistaCliente?accion=ArrendarDpto" class="btn-precio btn  px-3 py-2 ">
+                            <a href="#" class="btn-precio btn  px-3 py-2 ">
                                 <span>Alquilar</span>
                             </a>
                         </div>
@@ -126,10 +123,7 @@
                                     <img src="Css/img/room5.jpg" class="d-block w-100" alt="alt"/>
                                 </a>
                             </div>
-                        </div>
-                        
-                        
-                        
+                        </div>    
                     </div>
                 </div>
              
@@ -140,22 +134,16 @@
         <!-- Caracteristicas -->
         <section>
 
-            
       
             <div class=" mb-3">
                 <!-- seccion 1 -->
-                <main class="main col">
-                
-                <iframe name="ContenedorPrincipalArriendoDpto" style="height:100%;"></iframe>
-                </main> 
-                
                 <div class='container mb-4'>
                     <div class-='row '>
                         <div class=' col-12 d-flex justify-content-start '>
                             <div class=' d-flex icono-departamento me-3 align-items-center '>
                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
-                                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
-                             </svg>
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+    </svg>
 
                             </div>
                             <div class=" d-flex flex-column ">
@@ -174,9 +162,9 @@
                         <div class=' col-12 d-flex justify-content-start align-items-center '>
                             <div class=' d-flex icono-departamento me-3 '>
                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
-                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                             </svg>
+      <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+      <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+    </svg>
 
                             </div>
                             <div class=" d-flex flex-column   ">
@@ -195,8 +183,8 @@
                         <div class=' col-8 d-flex justify-content-start '>
                             <div class=' d-flex icono-departamento me-3 align-items-center '>
                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-router" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M5.525 3.025a3.5 3.5 0 0 1 4.95 0 .5.5 0 1 0 .707-.707 4.5 4.5 0 0 0-6.364 0 .5.5 0 0 0 .707.707ZM6.94 4.44a1.5 1.5 0 0 1 2.122 0 .5.5 0 0 0 .707-.707 2.5 2.5 0 0 0-3.536 0 .5.5 0 0 0 .707.707ZM2.974 2.342a.5.5 0 1 0-.948.316L3.806 8H1.5A1.5 1.5 0 0 0 0 9.5v2A1.5 1.5 0 0 0 1.5 13H2a.5.5 0 0 0 .5.5h2A.5.5 0 0 0 5 13h6a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5h.5a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 14.5 8h-2.306l1.78-5.342a.5.5 0 1 0-.948-.316L11.14 8H4.86L2.974 2.342ZM6.5 9h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h5Zm-4 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1Zm4.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2.5.5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1Zm1.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm-4.5-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-                             </svg>
+      <path fill-rule="evenodd" d="M5.525 3.025a3.5 3.5 0 0 1 4.95 0 .5.5 0 1 0 .707-.707 4.5 4.5 0 0 0-6.364 0 .5.5 0 0 0 .707.707ZM6.94 4.44a1.5 1.5 0 0 1 2.122 0 .5.5 0 0 0 .707-.707 2.5 2.5 0 0 0-3.536 0 .5.5 0 0 0 .707.707ZM2.974 2.342a.5.5 0 1 0-.948.316L3.806 8H1.5A1.5 1.5 0 0 0 0 9.5v2A1.5 1.5 0 0 0 1.5 13H2a.5.5 0 0 0 .5.5h2A.5.5 0 0 0 5 13h6a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5h.5a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 14.5 8h-2.306l1.78-5.342a.5.5 0 1 0-.948-.316L11.14 8H4.86L2.974 2.342ZM6.5 9h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h5Zm-4 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1Zm4.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2.5.5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1Zm1.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm-4.5-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
+    </svg>
 
                             </div>
                             <div class=" d-flex flex-column ">

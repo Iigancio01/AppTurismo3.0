@@ -33,7 +33,7 @@
                     </div> 
 
                     <div class="menu-enlaces d-flex align-items-center">
-                    <a href="VistaArriendo/Arriendo.jsp" class="px-4  d-flex align-items-center text-center">
+                    <a href="VistaArriendoNoS.jsp" class="px-4  d-flex align-items-center text-center">
                         <span>Arriendos</span>
                     </a>
                     </div>

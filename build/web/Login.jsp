@@ -21,7 +21,7 @@
             <div class="row py-2">
                 <!-- Logo -->
                 <div class="col-6 d-flex">
-                    <a href="" class="logo">
+                    <a href="/AppTurismo3.0/" class="logo">
                         <strong >Turismo Real Cl</strong>
                     </a>
 
@@ -34,7 +34,7 @@
                         </a>
                     </div>
                     <div class="menu-enlaces d-flex align-items-center">
-                    <a href="#" class="text-black px-4  d-flex align-items-center text-center">
+                    <a href="/AppTurismo3.0/VistaArriendoNoS.jsp" class="text-black px-4  d-flex align-items-center text-center">
                         <span>Arriendos</span>
                     </a>
                     </div>
