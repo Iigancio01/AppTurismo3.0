@@ -63,8 +63,8 @@
 
     
                     <select class="form-control"  id="select-busqueda">
-                        <option value="0" selected="">Destacados primero</option>
-                        <option value="1" >Precio de menor a mayor</option>
+                        <option value="0">Destacados primero</option>
+                        <option value="1" selected="">Precio de menor a mayor</option>
                         <option value="2">Precio de mayor a menor</option>
                     </select>
                </div>
@@ -129,7 +129,7 @@
                             </div>
                             <div class="col-6 d-flex align-items-center justify-content-end">
                                 <a href="#" class=" btn-departamento btn  px-3 py-2 ">
-                                    <span class="texto-precio">$40.000/noche</span>
+                                    <span class="texto-precio">$30.000/noche</span>
                                 </a>
 
                             </div>
@@ -158,12 +158,12 @@
                             <div class="col-6 d-flex">
                                 <ul class="list-inline lista-departamento">
                                     <li>1 Dormitorios</li>
-                                    <li>1 Baño</li>
+                                    <li>1 Baños</li>
                                 </ul>
                             </div>
                             <div class="col-6 d-flex align-items-center justify-content-end">
                                 <a href="#" class=" btn-departamento btn  px-3 py-2 ">
-                                    <span class="texto-precio">$35.000/noche</span>
+                                    <span class="texto-precio">$20.000/noche</span>
                                 </a>
 
                             </div>
@@ -177,24 +177,24 @@
                 <div class="col-6 d-flex align-items-center ficha-departamento" id="ficha-departamento">  
                     <a href="Departamento.jsp" id="link"></a>
                     <div class="col-3 p-1">
-                        <img src="../Css/img/departamento4.jpg" class=" imagen-departamento w-100" alt=""/>
+                        <img src="../Css/img/departamento1.jpg" class=" imagen-departamento w-100" alt=""/>
                     </div>
                     <div class="col-9 ms-2 p-1 d-block ">
                         <div class="col-12 mb-3">
-                            <p>Departamento en Valdivia</p>
-                            <h3>Departamento en arriendo 2 habitaciones</h3>
-                            <span>Excelente ubicación</span>
+                            <p>Departamento en Coquimbo</p>
+                            <h3>Departamento en arriendo 3 habitaciones</h3>
+                            <span>Vista al mar</span>
                         </div> 
                         <div class=" col-12 d-flex align-items-center justify-content-end">
                             <div class="col-6 d-flex">
                                 <ul class="list-inline lista-departamento">
-                                    <li>2 Dormitorios</li>
-                                    <li>1 Baño</li>
+                                    <li>3 Dormitorios</li>
+                                    <li>2 Baños</li>
                                 </ul>
                             </div>
                             <div class="col-6 d-flex align-items-center justify-content-end">
                                 <a href="#" class=" btn-departamento btn  px-3 py-2 ">
-                                    <span class="texto-precio">$30.000/noche</span>
+                                    <span class="texto-precio">$45.000/noche</span>
                                 </a>
 
                             </div>
@@ -210,20 +210,20 @@
                     <a href="#" id="link"></a>  
                     <div class="col-3 p-1   ">
                         <a href="#">
-                                <img src="../Css/img/departamento5.jpg" class=" imagen-departamento w-100" alt=""/>
+                                <img src="../Css/img/Departamento2.jpg" class=" imagen-departamento w-100" alt=""/>
                         </a>
                     </div>
                     <div class="col-9 ms-2 p-1 d-block ">
                         <div class="col-12 mb-3">
-                            <p>Departamento en Iquique</p>
-                            <h3>Departamento en arriendo 1 habitaciones</h3>
+                            <p>Departamento en Pucon</p>
+                            <h3>Departamento en arriendo 2 habitaciones</h3>
                             <span>Restaurantes cerca</span>
                         </div> 
                         <div class=" col-12 d-flex align-items-center justify-content-end">
                             <div class="col-6 d-flex">
                                 <ul class="list-inline lista-departamento">
-                                    <li>1 Dormitorios</li>
-                                    <li>1 Baño</li>
+                                    <li>2 Dormitorios</li>
+                                    <li>1 Baños</li>
                                 </ul>
                             </div>
                             <div class="col-6 d-flex align-items-center justify-content-end">
@@ -244,12 +244,12 @@
                     <a href="#" id="link"></a>   
                     <div class="col-3 p-1   ">
                         <a href="#">
-                                <img src="../Css/img/departamento6.jpg" class=" imagen-departamento w-100" alt=""/>
+                                <img src="../Css/img/departamento3.jpg" class=" imagen-departamento w-100" alt=""/>
                         </a>
                     </div>
                     <div class="col-9 ms-2 p-1 d-block ">
                         <div class="col-12 mb-3">
-                            <p>Departamento en Puerto Montt</p>
+                            <p>Departamento en Viña del mar</p>
                             <h3>Departamento en arriendo 1 habitaciones</h3>
                             <span>Vista al mar</span>
                         </div> 

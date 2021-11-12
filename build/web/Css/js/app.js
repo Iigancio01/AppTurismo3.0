@@ -1,4 +1,4 @@
-
+ meta-charset-utf-8 
 //Animaciones Test
 gsap.from(".bienvenido-a", {
     scrollTrigger: ".bienvenido-a", // start the animation when ".box" enters the viewport (once)
@@ -67,15 +67,4 @@ gsap.from(".footer-contenido", {
     opacity: 0,
     y: 100,
     duration: 1
-});
-
-
-const imagenes = document.querySelectorAll('.galeria .contenedor-imagen');
-const imagenModal = document.getElementById('imagen-modal');
-
-imagenes.forEach((imagen) => {
-    imagen.addEventListener('click', () => {
-        const ruta = imagen.querySelector('img').src;
-        imagenModal.src = ruta;
-    });
 });

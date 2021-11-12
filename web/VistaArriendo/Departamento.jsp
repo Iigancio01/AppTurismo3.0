@@ -61,7 +61,7 @@
                     <div class="col-5 d-flex ">
                         <div class="d-flex flex-column ">
                             <div class="">
-                                <h1 class="titulo2">Departamento en Coquimbo 3 habitaciones</h1>
+                                <h1 class="titulo1">Departamento en Coquimbo 3 habitaciones</h1>
                             </div>
                             <div class="">
                                 <a href="#" id="link1">Coquimbo, Region de Coquimbo, Chile</a>
@@ -86,43 +86,43 @@
         </section>
         <!-- Galeria -->
         <section>
-            <div class="container mb-4" >
-                <div class="row galeria ">
-                    <div class="  col-12 d-flex justify-content-center ">
+            <div class="container mb-5" >
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
                         <div class="col-6  ">
                             <!-- Imagen 1 -->
-                            <div class=" m-1 contenedor-imagen ">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#modal-galeria">
+                            <div class="m-1">
+                                <a href="#">
                                     <img src="../Css/img/room1.jpg" class="d-block w-100" alt="alt"/>
                                 </a>
                             </div>    
                         </div>
                         
-                        <div class="col-3 d-flex flex-column ">
+                        <div class="col-3 d-flex flex-column">
                             <!-- Imagen 2 -->
-                            <div class=" m-1 contenedor-imagen  ">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#modal-galeria">
+                            <div class="m-1 ">
+                                <a href="#">
                                     <img src="../Css/img/room2.jpg" class="d-block w-100" alt="alt"/>
                                 </a>
                             </div>
                             <!-- Imagen 3 -->
-                            <div class=" m-1  contenedor-imagen ">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#modal-galeria">
+                            <div class="m-1 ">
+                                <a href="#">
                                     <img src="../Css/img/room3.jpg" class="d-block w-100" alt="alt"/>
                                 </a>
                             </div> 
                         </div>
                         
-                        <div class="col-3 d-flex flex-column ">
+                        <div class="col-3 d-flex flex-column">
                             <!-- Imagen 4 -->
-                            <div class=" m-1 contenedor-imagen ">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#modal-galeria">
+                            <div class="m-1 ">
+                                <a href="#">
                                     <img src="../Css/img/room4.jpg" class="d-block w-100" alt="alt"/>
                                 </a>
                             </div>
                             <!-- Imagen 5 -->
-                            <div class=" m-1 contenedor-imagen  ">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#modal-galeria">
+                            <div class="m-1 ">
+                                <a href="#">
                                     <img src="../Css/img/room5.jpg" class="d-block w-100" alt="alt"/>
                                 </a>
                             </div>
@@ -132,47 +132,18 @@
                         
                     </div>
                 </div>
-                <!-- Modal -->
-                    <div 
-                        class="modal fade" 
-                        id="modal-galeria" 
-                        tabindex="-1"
-                        aria-labelledby="modal-galeria"
-                        aria-hidden="true"
-                    >
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <img src="../Css/img/room5.jpg" id="imagen-modal" alt="">
-                            </div>
-                        </div>
-                    </div>
+             
             </div>
         </section>
         
-        
-        <!-- Primera Seccion -->
-        <section>
-            <div class='container caracteristicas   mb-4'>
-                <div class='row'>
-                    <div class="col d-flex">
-                        <h2 class="titulo1">Departamento en arriendo - Region de Coquimbo</h2>
-                    </div> 
-                </div>
-                <div class="row">
-                    <div class="col d-flex mb-4">
-                        <p>3 habitación <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-</svg> 3 cama <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-</svg> 2 baño</p>
-                    </div>
-                </div>
-            </div>
-        </section>
         
         <!-- Caracteristicas -->
         <section>
-           
+           <main class="main col">
+                
+                <iframe name="ContenedorPrincipal" style="height:100%; width:100%;"></iframe>
+            </main> 
+            
       
             <div class=" mb-3">
                 <!-- seccion 1 -->
@@ -223,7 +194,7 @@
                             <div class=' d-flex icono-departamento me-3 align-items-center '>
                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-router" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M5.525 3.025a3.5 3.5 0 0 1 4.95 0 .5.5 0 1 0 .707-.707 4.5 4.5 0 0 0-6.364 0 .5.5 0 0 0 .707.707ZM6.94 4.44a1.5 1.5 0 0 1 2.122 0 .5.5 0 0 0 .707-.707 2.5 2.5 0 0 0-3.536 0 .5.5 0 0 0 .707.707ZM2.974 2.342a.5.5 0 1 0-.948.316L3.806 8H1.5A1.5 1.5 0 0 0 0 9.5v2A1.5 1.5 0 0 0 1.5 13H2a.5.5 0 0 0 .5.5h2A.5.5 0 0 0 5 13h6a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5h.5a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 14.5 8h-2.306l1.78-5.342a.5.5 0 1 0-.948-.316L11.14 8H4.86L2.974 2.342ZM6.5 9h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h5Zm-4 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1Zm4.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2.5.5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1Zm1.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm-4.5-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-     </svg>
+    </svg>
 
                             </div>
                             <div class=" d-flex flex-column ">
@@ -235,6 +206,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </section>   
         
@@ -336,7 +308,29 @@
             </div>
                
         </section>
+            
+            
 
+            
+            
+            
+            
+        
+                       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <footer class="container-fluid">
             <div class="row footer-contenido d-flex justify-content-center align-items-start py-5">
                 <!-- Redes Sociales -->
@@ -400,7 +394,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="../Css/js/app.js" type="text/javascript"></script>
+        <script src="Css/js/app.js" type="text/javascript"></script>
         
     </body>
 </html>
