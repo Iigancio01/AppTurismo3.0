@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import static java.lang.Integer.parseInt;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -32,6 +33,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import oracle.jdbc.OracleCallableStatement;
+import oracle.jdbc.OracleTypes;
 
 /**
  *
@@ -58,16 +61,12 @@ public class ControladorPdfCheckin extends HttpServlet {
         try{
                 try{
             
-                String sql="SELECT d.FECHA_INICIO, d.fecha_fin , d.monto, \n" +
-                            "       d.departamento_iddepartamento, de.direccion, \n" +
-                            "       de.descripcion , m.cliente_rutcliente, c.nombre, \n" +
-                            "       c.apellidom, c.apellidop\n" +
-                            "FROM DETAIL_ARRIENDO d, MASTER_ARRIENDO m, Cliente c, departamento de \n" +
-                            "where m.cliente_rutcliente = c.rutcliente and   d.master_arriendo_idmaster_arriendo=m.idmaster_arriendo and d.departamento_iddepartamento = de.iddepartamento and d.iddetail_arriendo="+IdArriendo;
-                
                 con=conex.getConnection();
-                ps=con.prepareStatement(sql);
-                rs=ps.executeQuery();
+               CallableStatement sp_listar_pdf = con.prepareCall("{call sp_listar_pdf(?,?)}");
+                    sp_listar_pdf.setString(1,IdArriendo);
+                    sp_listar_pdf.registerOutParameter(2, OracleTypes.CURSOR);
+                    sp_listar_pdf.execute();
+                    ResultSet rs = ((OracleCallableStatement)sp_listar_pdf).getCursor(2);
                 while(rs.next()){
                      datos.setFechaI(rs.getString("FECHA_INICIO"));
                      datos.setFechaF(rs.getString("fecha_fin"));
@@ -75,7 +74,7 @@ public class ControladorPdfCheckin extends HttpServlet {
                      datos.setIddpto(rs.getString("departamento_iddepartamento"));
                      datos.setDireccion(rs.getString("direccion"));
                      datos.setDescripcion(rs.getString("descripcion"));
-                     datos.setRutCli(rs.getString("cliente_rutcliente"));
+                     datos.setRutCli(rs.getString("rutcliente"));
                      datos.setNombre(rs.getString("nombre"));
                      datos.setAppma(rs.getString("apellidom"));
                      datos.setAppa(rs.getString("apellidop"));

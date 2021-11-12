@@ -117,9 +117,7 @@ public class ArriendoDAO implements CrudArriendo{
     }
 
     @Override
-    public boolean deleteArriendo(String IdArriendo) {
-        String sql="delete from DETAIL_ARRIENDO where IDDETAIL_ARRIENDO="+IdArriendo;
-        
+    public boolean deleteArriendo(String IdArriendo) {        
         try{
             con=conex.getConnection();
             CallableStatement sp_eliminar_arriendo = con.prepareCall("{call sp_eliminar_arriendo(?)}");

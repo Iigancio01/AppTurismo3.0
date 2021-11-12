@@ -7,9 +7,12 @@ package ModeloDAO;
 import Config.Conexion;
 import Interfaces.ValidarLogin;
 import Modelo.Usuario;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import oracle.jdbc.OracleCallableStatement;
+import oracle.jdbc.OracleTypes;
 
 /**
  *
@@ -24,14 +27,16 @@ public class UsuarioDAO implements ValidarLogin {
     
     @Override
     public int validar(Usuario usu){
-        String sql="Select * from USUARIO where CORREOELECTRONICO=? and PASSWORD_2=? ";
         try{
             int r=0;
             con=cn.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.setString(1, usu.getCorreousuario());
-            ps.setString(2, usu.getContraseña());
-            rs=ps.executeQuery();
+          
+            CallableStatement sp_validar_usuario = con.prepareCall("{call sp_validar_usuario(?,?,?)}");
+                    sp_validar_usuario.setString(1,usu.getCorreousuario());
+                    sp_validar_usuario.setString(2,usu.getContraseña());
+                    sp_validar_usuario.registerOutParameter(3, OracleTypes.CURSOR);
+                    sp_validar_usuario.execute();
+                    ResultSet rs = ((OracleCallableStatement)sp_validar_usuario).getCursor(3);
             while(rs.next()){
                 r=r+1;
                 usu.setCorreousuario(rs.getString("CORREOELECTRONICO"));
