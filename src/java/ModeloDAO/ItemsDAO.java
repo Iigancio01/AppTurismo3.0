@@ -124,7 +124,7 @@ public class ItemsDAO implements CrudItems {
                     sp_eliminar_item.execute();
 
         }catch(Exception e){
-            System.out.println("No se ha podido eliminar el departamento"+ e.getMessage());
+            System.out.println("No se ha podido eliminar el item"+ e.getMessage());
         }
         return false;
     }

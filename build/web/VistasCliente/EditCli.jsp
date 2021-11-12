@@ -6,7 +6,7 @@
     <head>
         <link href="Css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Editar Departamento</title>
+        <title>Editar Cleinte</title>
     </head>
     <body>
          <div class="container">
@@ -16,7 +16,7 @@
                     String RutCliente= (String)request.getAttribute("RutCliente");
                     Cliente cli=(Cliente)cliDAO.listarIdCliente(RutCliente);
              %>
-            <h1>Modificar Departamento</h1>
+            <h1>Modificar Cliente</h1>
             <form action="ControladorCliente">
                 Rut Cliente:<br>
                 <input class="form-control" style="background-color: #ccc "type="text" name="txtRutCliente" value="<%= cli.getRutCliente()%>" readonly><br>

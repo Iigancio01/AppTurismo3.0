@@ -253,7 +253,7 @@ public class DepartamentosDAO implements CrudDepartamento {
                            ResultSet rs = ((OracleCallableStatement)sp_montos_graf2).getCursor(1);
                    while(rs.next()){
 
-                       por.setPorcen(rs.getString("porcentaje"));
+                       por.setPorcen(rs.getInt("porcentaje"));
 
 
                    }
