@@ -43,8 +43,8 @@ public class ArriendoDAO implements CrudArriendo{
                 arri.setIdArriendo(rs.getString("IDDETAIL_ARRIENDO"));
                 arri.setIdDepartamento(rs.getString("DEPARTAMENTO_IDDEPARTAMENTO"));
                 arri.setIdMasterArriendo(rs.getString("MASTER_ARRIENDO_IDMASTER_ARRIENDO"));
-                arri.setFechaInicio(rs.getDate("FECHA_INICIO"));
-                arri.setFechaFin(rs.getDate("FECHA_FIN"));
+                arri.setFechaInicio(rs.getString("FECHA_INICIO"));
+                arri.setFechaFin(rs.getString("FECHA_FIN"));
                 arri.setMonto(parseInt(rs.getString("MONTO")));
                 datos.add(arri);
             }
@@ -67,8 +67,8 @@ public class ArriendoDAO implements CrudArriendo{
                 arri.setIdArriendo(rs.getString("IDDETAIL_ARRIENDO"));
                 arri.setIdDepartamento(rs.getString("DEPARTAMENTO_IDDEPARTAMENTO"));
                 arri.setIdMasterArriendo(rs.getString("MASTER_ARRIENDO_IDMASTER_ARRIENDO"));
-                arri.setFechaInicio(rs.getDate("FECHA_INICIO"));
-                arri.setFechaFin(rs.getDate("FECHA_FIN"));
+                arri.setFechaInicio(rs.getString("FECHA_INICIO"));
+                arri.setFechaFin(rs.getString("FECHA_FIN"));
                 arri.setMonto(parseInt(rs.getString("MONTO")));
             }
         }catch(Exception e){
@@ -86,12 +86,14 @@ public class ArriendoDAO implements CrudArriendo{
                            sp_insertar_arriendo.setString(1,arri.getIdArriendo());
                            sp_insertar_arriendo.setString(2,arri.getIdDepartamento());
                            sp_insertar_arriendo.setString(3,arri.getIdMasterArriendo());
-                           sp_insertar_arriendo.setDate(4,arri.getFechaInicio());
-                           sp_insertar_arriendo.setDate(5,arri.getFechaFin());
+                           sp_insertar_arriendo.setString(4,arri.getFechaInicio());
+                           sp_insertar_arriendo.setString(5,arri.getFechaFin());
                            sp_insertar_arriendo.setInt(6,arri.getMonto());
                            sp_insertar_arriendo.execute();
+                           
         }catch(Exception e){
-             System.out.println("No se ha podido insertar los datos"+ e.getMessage()); 
+             System.out.println("No se ha podido insertar los datos"+ e.getMessage());
+                
         }
         return false;
     }
@@ -104,8 +106,8 @@ public class ArriendoDAO implements CrudArriendo{
                                         sp_actualizar_arriendo.setString(1,arri.getIdArriendo());
                                         sp_actualizar_arriendo.setString(2,arri.getIdDepartamento());
                                         sp_actualizar_arriendo.setString(3,arri.getIdMasterArriendo());
-                                        sp_actualizar_arriendo.setDate(4,arri.getFechaInicio());
-                                        sp_actualizar_arriendo.setDate(5,arri.getFechaFin());
+                                        sp_actualizar_arriendo.setString(4,arri.getFechaInicio());
+                                        sp_actualizar_arriendo.setString(5,arri.getFechaFin());
                                         sp_actualizar_arriendo.setInt(6,arri.getMonto());
                                         sp_actualizar_arriendo.execute();
         }catch(Exception e){

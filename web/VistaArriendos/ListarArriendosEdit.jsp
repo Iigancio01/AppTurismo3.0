@@ -23,6 +23,7 @@
                     </div>
                       <div  class="card-block">
                         <a class="btn btn-success" href="ControladorArriendo?accion=ListarArriendos" target="ContenedorPrincipal">Lista de arriendos</a>
+                         <a class="btn btn-success" href="ControladorArriendo?accion=AgregarArriendo" target="ContenedorPrincipal">AgregarArriendo</a>
                     </div>                 
 
                     <div  class="card-body">
@@ -56,8 +57,8 @@
                                     <td class="text-center"><%=arri.getFechaFin()%></td>
                                     <td class="text-center"><%=arri.getMonto()%></td>
                                     <td class="text-center">
-                                        <a class="btn btn-warning" href="ControladorServicios?accion=editServicio&IdSubFamiliaServicio=<%=arri.getIdArriendo()%>" target="ContenedorPrincipal">Editar</a>
-                                        <a class="btn btn-danger" href="ControladorServicios?accion=eliminarServicio&IdSubFamiliaServicio=<%=arri.getIdArriendo()%>" onclick="return confirm('¿Seguro que quieres eliminar?')" >Eliminar</a>
+                                        <a class="btn btn-warning" href="ControladorArriendo?accion=editarArriendo&IdArriendo=<%=arri.getIdArriendo()%>" target="ContenedorPrincipal">Editar</a>
+                                        <a class="btn btn-danger" href="ControladorArriendo?accion=eliminarArriendo&IdArriendo=<%=arri.getIdArriendo()%>" onclick="return confirm('¿Seguro que quieres eliminar?')" >Eliminar</a>
                                     </td>
                                 </tr>
                                 <%}%>

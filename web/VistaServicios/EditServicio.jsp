@@ -20,7 +20,7 @@
             <h1>Modificar Servicio</h1>
             <form action="ControladorServicios">
                 Id subfamilia servicio:<br>
-                <input class="form-control" style="background-color: #ccc "type="text" name="txtIdSubFamiliaServicio" value="<%=se.getIdSubFamiliaServicio()%>" readonly><br>
+                <input class="form-control" style="background-color: #ccc " type="text" name="txtIdSubFamiliaServicio" value="<%=se.getIdSubFamiliaServicio()%>" readonly><br>
                 Id Familia servicio:<br>
                 <input class="form-control" type="text" name="txtIdFamiliaServicio" value="<%=se.getIdFamiliaServicio()%>"><br>
                 Id Nombre sub familia:<br>

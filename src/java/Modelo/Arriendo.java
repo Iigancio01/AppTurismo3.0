@@ -14,14 +14,14 @@ public class Arriendo {
     String IdArriendo;
     String IdDepartamento;
     String IdMasterArriendo;
-    Date FechaInicio;
-    Date FechaFin;
+    String FechaInicio;
+    String FechaFin;
     int Monto;
 
     public Arriendo() {
     }
 
-    public Arriendo(String IdArriendo, String IdDepartamento, String IdMasterArriendo, Date FechaInicio, Date FechaFin, int Monto) {
+    public Arriendo(String IdArriendo, String IdDepartamento, String IdMasterArriendo, String FechaInicio, String FechaFin, int Monto) {
         this.IdArriendo = IdArriendo;
         this.IdDepartamento = IdDepartamento;
         this.IdMasterArriendo = IdMasterArriendo;
@@ -54,19 +54,19 @@ public class Arriendo {
         this.IdMasterArriendo = IdMasterArriendo;
     }
 
-    public Date getFechaInicio() {
+    public String getFechaInicio() {
         return FechaInicio;
     }
 
-    public void setFechaInicio(Date FechaInicio) {
+    public void setFechaInicio(String FechaInicio) {
         this.FechaInicio = FechaInicio;
     }
 
-    public Date getFechaFin() {
+    public String getFechaFin() {
         return FechaFin;
     }
 
-    public void setFechaFin(Date FechaFin) {
+    public void setFechaFin(String FechaFin) {
         this.FechaFin = FechaFin;
     }
 

@@ -35,11 +35,11 @@ public class ControladorPdfChecklist extends HttpServlet {
         
         
            try{ 
-            Document documento = new Document();
-            PdfWriter.getInstance(documento, out);
+            Document documentoCheck = new Document();
+            PdfWriter.getInstance(documentoCheck, out);
             
             
-            documento.open();
+            documentoCheck.open();
             
             Paragraph par1 = new Paragraph();
             Font fonttitulo = new Font(Font.FontFamily.HELVETICA,20,Font.BOLD,BaseColor.BLACK);
@@ -47,7 +47,7 @@ public class ControladorPdfChecklist extends HttpServlet {
             par1.setAlignment(Element.ALIGN_CENTER);
             par1.add(new Phrase(Chunk.NEWLINE));
             par1.add(new Phrase(Chunk.NEWLINE));
-            documento.add(par1);
+            documentoCheck.add(par1);
             
             Paragraph par2 = new Paragraph();
             Font fontdescrip = new Font(Font.FontFamily.TIMES_ROMAN,16,Font.NORMAL,BaseColor.BLACK);
@@ -55,7 +55,7 @@ public class ControladorPdfChecklist extends HttpServlet {
             par2.setAlignment(Element.ALIGN_JUSTIFIED);
             par2.add(new Phrase(Chunk.NEWLINE));
             par2.add(new Phrase(Chunk.NEWLINE));
-            documento.add(par2); 
+            documentoCheck.add(par2); 
             
             
 //            PdfPTable tablaC = new PdfPTable(4);
@@ -108,7 +108,7 @@ public class ControladorPdfChecklist extends HttpServlet {
             par3.setAlignment(Element.ALIGN_RIGHT);
             par3.add(new Phrase(Chunk.NEWLINE));
             par3.add(new Phrase(Chunk.NEWLINE));
-            documento.add(par3); 
+            documentoCheck.add(par3); 
             
             Paragraph par4 = new Paragraph();
             Font fontFL = new Font(Font.FontFamily.TIMES_ROMAN,16,Font.NORMAL,BaseColor.BLACK);
@@ -116,9 +116,9 @@ public class ControladorPdfChecklist extends HttpServlet {
             par4.setAlignment(Element.ALIGN_RIGHT);
             par4.add(new Phrase(Chunk.NEWLINE));
             par4.add(new Phrase(Chunk.NEWLINE));
-            documento.add(par4); 
+            documentoCheck.add(par4); 
             
-            documento.close();
+            documentoCheck.close();
            }catch(Exception e){
                System.out.println("No se pueee"+ e.getMessage());
            }
