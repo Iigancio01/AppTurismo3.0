@@ -63,7 +63,7 @@ public class ControladorPdfCheckin extends HttpServlet {
                             "       de.descripcion , m.cliente_rutcliente, c.nombre, \n" +
                             "       c.apellidom, c.apellidop\n" +
                             "FROM DETAIL_ARRIENDO d, MASTER_ARRIENDO m, Cliente c, departamento de \n" +
-                            "where m.cliente_rutcliente = c.rutcliente and  d.departamento_iddepartamento = de.iddepartamento and d.iddetail_arriendo="+IdArriendo;
+                            "where m.cliente_rutcliente = c.rutcliente and   d.master_arriendo_idmaster_arriendo=m.idmaster_arriendo and d.departamento_iddepartamento = de.iddepartamento and d.iddetail_arriendo="+IdArriendo;
                 
                 con=conex.getConnection();
                 ps=con.prepareStatement(sql);

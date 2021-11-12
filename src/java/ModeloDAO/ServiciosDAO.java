@@ -56,7 +56,7 @@ public class ServiciosDAO implements CrudServicios {
 
     @Override
     public Servicios listarIdServicios(String IdSubFamiliaServicio) {
-         String sql="Select * from SUB_FAMILIA_SERVICIO where IDSUB_FAMILIA_SERVICIO="+IdSubFamiliaServicio;
+         
         try{
             con=conex.getConnection();
             CallableStatement sp_listar_servicioid = con.prepareCall("{call sp_listar_servicioid(?,?)}");
@@ -78,13 +78,14 @@ public class ServiciosDAO implements CrudServicios {
 
     @Override
     public boolean addServicios(Servicios se) {
-        String sql="insert into SUB_FAMILIA_SERVICIO(IDSUB_FAMILIA_SERVICIO, FAMILIA_SERVICIO_IDFAMILIA_SERVICIO, NOM_SUBFAMILIA) "
-                +  "values('"+se.getIdSubFamiliaServicio()+"','"+se.getIdFamiliaServicio()+"','"+se.getNombreSubFamilia()+"')";
-        
+       
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+                    CallableStatement sp_insertar_servicio = con.prepareCall("{call sp_insertar_servicio(?,?,?)}");
+                           sp_insertar_servicio.setString(1,se.getIdSubFamiliaServicio());
+                           sp_insertar_servicio.setString(2,se.getIdFamiliaServicio());
+                           sp_insertar_servicio.setString(3,se.getNombreSubFamilia());
+                           sp_insertar_servicio.execute();
         }catch(Exception e){
              System.out.println("No se ha podido insertar los datos"+ e.getMessage()); 
         }
@@ -94,11 +95,12 @@ public class ServiciosDAO implements CrudServicios {
     @Override
     public boolean editServicio(Servicios se) {
         try{
-            String sql="update SUB_FAMILIA_SERVICIO set IDSUB_FAMILIA_SERVICIO='"+se.getIdSubFamiliaServicio()+"', FAMILIA_SERVICIO_IDFAMILIA_SERVICIO='"+se.getIdFamiliaServicio()+"',"
-                + "NOM_SUBFAMILIA='"+se.getNombreSubFamilia()+"'where IDSUB_FAMILIA_SERVICIO="+se.getIdSubFamiliaServicio();
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+            CallableStatement sp_actualizar_servicio = con.prepareCall("{call sp_actualizar_servicio(?,?,?)}");
+                           sp_actualizar_servicio.setString(1,se.getIdSubFamiliaServicio());
+                           sp_actualizar_servicio.setString(2,se.getIdFamiliaServicio());
+                           sp_actualizar_servicio.setString(3,se.getNombreSubFamilia());
+                           sp_actualizar_servicio.execute();
         }catch(Exception e){
             System.out.println("No se ha podido editar los datos"+ e.getMessage());
         }
@@ -107,13 +109,12 @@ public class ServiciosDAO implements CrudServicios {
 
     @Override
     public boolean deleteServicio(String IdSubFamiliaServicio) {
-        
-        String sql="delete from SUB_FAMILIA_SERVICIO where IDSUB_FAMILIA_SERVICIO="+IdSubFamiliaServicio;
-        
+
         try{
             con=conex.getConnection();
-            ps=con.prepareStatement(sql);
-            ps.executeUpdate();
+            CallableStatement sp_eliminar_servicio = con.prepareCall("{call sp_eliminar_servicio(?)}");
+                sp_eliminar_servicio.setString(1,IdSubFamiliaServicio);
+                sp_eliminar_servicio.execute();
         }catch(Exception e){
             System.out.println("No se ha podido eliminar la mantencion"+ e.getMessage());
         }
