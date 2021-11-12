@@ -28,7 +28,10 @@ public class DepartamentosDAO implements CrudDepartamento {
     Conexion conex= new Conexion();
 
     Departamentos dep= new Departamentos();
-    
+       Departamentos mesa= new Departamentos();
+       Departamentos mes= new Departamentos();
+       Departamentos por= new Departamentos();
+
     @Override
     public List listarDpto() {
         List<Departamentos> datos=new ArrayList<>();
@@ -204,6 +207,60 @@ public class DepartamentosDAO implements CrudDepartamento {
         }
         return false;
     }
+    
+    public Departamentos montoMes() {
+        try{
+            con=conex.getConnection();
+                CallableStatement sp_montos_graf = con.prepareCall("{call sp_montos_graf(?)}");
+                    sp_montos_graf.registerOutParameter(1, OracleTypes.CURSOR);
+                    sp_montos_graf.execute();
+                    ResultSet rs = ((OracleCallableStatement)sp_montos_graf).getCursor(1);
+            while(rs.next()){
+                
+                mesa.setMontoPas(rs.getString("mes_anterior"));
+               
+                
+            }
+        }catch (Exception e){
+            System.out.println("No se a podido listar"+ e.getMessage());
+        }
+        return mesa;
+    }
+    public Departamentos montoMesAct() {
+           try{
+               con=conex.getConnection();
+                   CallableStatement sp_montos_graf1 = con.prepareCall("{call sp_montos_graf1(?)}");
+                       sp_montos_graf1.registerOutParameter(1, OracleTypes.CURSOR);
+                       sp_montos_graf1.execute();
+                       ResultSet rs = ((OracleCallableStatement)sp_montos_graf1).getCursor(1);
+               while(rs.next()){
 
+                   mes.setMontoMes(rs.getString("mes_actual"));
+
+
+               }
+           }catch (Exception e){
+               System.out.println("No se a podido listar"+ e.getMessage());
+           }
+           return mes;
+       }
+        public Departamentos Porcen() {
+               try{
+                   con=conex.getConnection();
+                       CallableStatement sp_montos_graf2 = con.prepareCall("{call sp_montos_graf2(?)}");
+                           sp_montos_graf2.registerOutParameter(1, OracleTypes.CURSOR);
+                           sp_montos_graf2.execute();
+                           ResultSet rs = ((OracleCallableStatement)sp_montos_graf2).getCursor(1);
+                   while(rs.next()){
+
+                       por.setPorcen(rs.getString("porcentaje"));
+
+
+                   }
+               }catch (Exception e){
+                   System.out.println("No se a podido listar"+ e.getMessage());
+               }
+               return por;
+           }
     
 }

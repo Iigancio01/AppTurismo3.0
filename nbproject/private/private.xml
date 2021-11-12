@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/src/java/Modelo/Items.java</file>
             <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/src/java/ModeloDAO/DepartamentosDAO.java</file>
             <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/src/java/ModeloDAO/ServiciosDAO.java</file>
@@ -25,6 +26,22 @@
             <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/web/VistaArriendos/ListarArriendosEdit.jsp</file>
             <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/web/VistaArriendoNoS.jsp</file>
             <file>file:/C:/Users/avata/Documents/NetBeansProjects/AppTurismo3.0/src/java/Modelo/Arriendo.java</file>
+=======
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/web/VistasCliente/AddCli.jsp</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/src/java/Controlador/FiltroSesiones.java</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/web/VistasCliente/EditCli.jsp</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/web/VistasItem/EditItem.jsp</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/src/java/Modelo/Mantencion.java</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/src/java/ModeloDAO/ItemsDAO.java</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/src/java/ModeloDAO/DepartamentosDAO.java</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/src/java/Controlador/ControladorMantencion.java</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/web/VistasCliente/ListarCli.jsp</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/src/java/ModeloDAO/UsuarioDAO.java</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/src/java/ModeloDAO/MantencionDAO.java</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/web/VistasDpto/DisponiDep.jsp</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/src/java/ModeloDAO/ClienteDAO.java</file>
+            <file>file:/C:/Users/fgonz/Documents/GitHub/AppTurismo3.0/web/VistasItem/ListarItem.jsp</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
