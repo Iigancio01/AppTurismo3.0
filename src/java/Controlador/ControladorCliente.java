@@ -5,10 +5,12 @@
 package Controlador;
 
 import Modelo.Cliente;
+
 import ModeloDAO.ClienteDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.Integer.parseInt;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -51,20 +53,26 @@ public class ControladorCliente extends HttpServlet {
             acceso=addCliente;
         }
         else if(action.equalsIgnoreCase("AgregarCliente")){
+            
             String RutCliente=request.getParameter("txtRutCliente");
             String IdUsuario=request.getParameter("txtIdUsuario");
             String IdComuna=request.getParameter("txtIdComuna");
             String NombreCli=request.getParameter("txtNombreCli");
             String ApellidoPC=request.getParameter("txtApellidoPC");
             String ApellidoMC=request.getParameter("txtApellidoMC");
-            
+            String Correo=request.getParameter("txtCorreo");
+            String Contrasena=request.getParameter("txtContrasena");
+            String TipoUsuario=request.getParameter("txtTipoUsuario");
+
             cli.setRutCliente(RutCliente);
             cli.setIdUsuario(IdUsuario);
             cli.setIdComuna(IdComuna);
             cli.setNombreCli(NombreCli);
             cli.setAppellidoPC(ApellidoPC);
             cli.setApellidoMC(ApellidoMC);
-           
+            cli.setCorreo(Correo);
+            cli.setContrasena(Contrasena);
+            cli.setTipoUsuario(TipoUsuario);
             cliDAO.addCliente(cli);
             acceso=listarCliente;
             

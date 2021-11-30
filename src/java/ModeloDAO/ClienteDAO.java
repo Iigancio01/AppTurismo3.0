@@ -80,6 +80,15 @@ public class ClienteDAO implements CrudCliente{
     public boolean addCliente(Cliente cli) {
            try{
              con=conex.getConnection();
+             CallableStatement sp_insertar_usuario = con.prepareCall("{call sp_insertar_usuario(?,?,?,?,?)}");
+                sp_insertar_usuario.setString(1,cli.getIdUsuario());
+                sp_insertar_usuario.setString(2,cli.getNombreCli());
+                sp_insertar_usuario.setString(3,cli.getTipoUsuario());
+                sp_insertar_usuario.setString(4,cli.getContrasena());
+                sp_insertar_usuario.setString(5,cli.getCorreo());
+       
+                sp_insertar_usuario.execute();
+                
               CallableStatement sp_insertar_cliente = con.prepareCall("{call sp_insertar_cliente(?,?,?,?,?,?)}");
                 sp_insertar_cliente.setString(1,cli.getRutCliente());
                 sp_insertar_cliente.setString(2,cli.getIdUsuario());
@@ -87,7 +96,9 @@ public class ClienteDAO implements CrudCliente{
                 sp_insertar_cliente.setString(4,cli.getNombreCli());
                 sp_insertar_cliente.setString(5,cli.getAppellidoPC());
                 sp_insertar_cliente.setString(6,cli.getApellidoMC());
+
                 sp_insertar_cliente.execute();
+
  
         }catch(Exception e){
             System.out.println("No se ha podido insertar los datos"+ e.getMessage());

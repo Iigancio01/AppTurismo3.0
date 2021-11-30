@@ -16,17 +16,23 @@ public class Cliente {
     String NombreCli;
     String AppellidoPC;
     String ApellidoMC;
+    String Correo;
+    String Contrasena;
+    String TipoUsuario;
 
     public Cliente() {
     }
 
-    public Cliente(String RutCliente, String IdUsuario, String IdComuna, String NombreCli, String AppellidoPC, String ApellidoMC) {
+    public Cliente(String RutCliente, String IdUsuario, String IdComuna, String NombreCli, String AppellidoPC, String ApellidoMC, String Correo, String Contrasena, String TipoUsuario) {
         this.RutCliente = RutCliente;
         this.IdUsuario = IdUsuario;
         this.IdComuna = IdComuna;
         this.NombreCli = NombreCli;
         this.AppellidoPC = AppellidoPC;
         this.ApellidoMC = ApellidoMC;
+        this.Correo = Correo;
+        this.Contrasena = Contrasena;
+        this.TipoUsuario = TipoUsuario;
     }
 
     public String getRutCliente() {
@@ -76,6 +82,32 @@ public class Cliente {
     public void setApellidoMC(String ApellidoMC) {
         this.ApellidoMC = ApellidoMC;
     }
+
+    public String getCorreo() {
+        return Correo;
+    }
+
+    public void setCorreo(String Correo) {
+        this.Correo = Correo;
+    }
+
+    public String getContrasena() {
+        return Contrasena;
+    }
+
+    public void setContrasena(String Contrasena) {
+        this.Contrasena = Contrasena;
+    }
+
+    public String getTipoUsuario() {
+        return TipoUsuario;
+    }
+
+    public void setTipoUsuario(String TipoUsuario) {
+        this.TipoUsuario = TipoUsuario;
+    }
+
+
     
     
 }
